@@ -42,7 +42,7 @@ begin
         rst_i =>  rst_m,
         ena_i =>  ena_m,
         D_i   =>  D_reg(x),
-        Q_o   =>  D_reg(x)
+        Q_o   =>  Q_reg(x)
       );
   end generate ffd_gen;
 end;
