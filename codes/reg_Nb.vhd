@@ -4,7 +4,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity reg_4b is
+entity reg_Nb is
   generic(
     N: natural := 4
   );
@@ -17,7 +17,7 @@ entity reg_4b is
   );
 end;
 
-architecture reg_4b_arq of reg_4b is
+architecture reg_Nb_arq of reg_Nb is
 ----------------------------------------------
 --              Componentes                 --
 ----------------------------------------------

@@ -32,7 +32,7 @@ constant b_aux: std_logic_vector(N-1 downto 0):= "0001";
 --              Arquitectura                --
 ----------------------------------------------
 begin
-  reg0: entity work.reg_4b
+  reg0: entity work.reg_Nb
     generic map(N => N)
     port map(
       clk_m => clk_m1,
