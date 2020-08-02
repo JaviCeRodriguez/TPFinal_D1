@@ -1,9 +1,8 @@
 -- Contador BCD
--- Utilizo: ffd.vhd, reg_4b.vhd
+-- Utilizo: ffd.vhd, reg_4b.vhd, sum_Nb.vhd, sum_1b.vhd
 
 library IEEE;
 use IEEE.std_logic_1164.all;
---use IEEE.numeric_std.all;
 
 entity BCD_counter is
   generic(
@@ -53,7 +52,6 @@ begin
     );
 
   rst_aux <= comp_aux or rst_m1; -- Reset
-  --Dinc_aux <= std_logic_vector(unsigned(Qreg_aux) + 1); -- Incrementador
   comp_aux <= Qreg_aux(0) and (not Qreg_aux(1)) and (not Qreg_aux(2)) and Qreg_aux(3); -- Comparador
   count <= Qreg_aux; -- Cuenta
   max <= comp_aux; -- Maxima cuenta
