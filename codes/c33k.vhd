@@ -1,5 +1,5 @@
 -- Contador de 33000 bits
--- Utilizo: ffd.vhd, reg_4b.vhad, sum_Nb.vhd, sum_1b.vhd
+-- Utilizo: ffd.vhd, reg_Nb.vhad, sum_Nb.vhd, sum_1b.vhd
 
 library IEEE;
 use IEEE.std_logic_1164.all;

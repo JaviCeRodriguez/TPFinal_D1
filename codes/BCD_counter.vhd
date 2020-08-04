@@ -1,5 +1,5 @@
 -- Contador BCD
--- Utilizo: ffd.vhd, reg_4b.vhd, sum_Nb.vhd, sum_1b.vhd
+-- Utilizo: ffd.vhd, reg_Nb.vhd, sum_Nb.vhd, sum_1b.vhd
 
 library IEEE;
 use IEEE.std_logic_1164.all;
