@@ -35,10 +35,10 @@ begin
                 (bus_m(i)(0) and pos(i));
   end generate enchufe;
 
-  pos(0) <= not (sel(2) or sel(1) or sel(0));         -- 000: BCD0
+  pos(3) <= not (sel(2) or sel(1) or sel(0));         -- 000: BCD0
   pos(1) <= (not sel(2)) and (not sel(1)) and sel(0); -- 001: point
   pos(2) <= (not sel(2)) and sel(1) and (not sel(0)); -- 010: BCD1
-  pos(3) <= (not sel(2)) and sel(1) and sel(0);       -- 011: BCD2
+  pos(0) <= (not sel(2)) and sel(1) and sel(0);       -- 011: BCD2
   pos(4) <= sel(2) and (not sel(1)) and (not sel(0)); -- 100: volt
 
   bus_m(0) <= BCD0;

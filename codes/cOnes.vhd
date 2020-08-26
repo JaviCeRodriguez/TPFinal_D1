@@ -33,13 +33,13 @@ begin
     BCD_counterN: entity work.BCD_counter
       generic map(N => M)
       port map(
-        clk_m1  => clk_i,
-        rst_m1  => rst_i,
-        ena_m1  => ena_aux(i),
-        count   => BCD_o(i),
-        max     => max_aux(i)
+        clk_i  => clk_i,
+        rst_i  => rst_i,
+        ena_i  => ena_aux(i),
+        count  => BCD_o(i),
+        max    => max_aux(i)
       );
-    ena_aux(i+1) <= ena_aux(i) or max_aux(i);
+    ena_aux(i+1) <= ena_aux(i) and max_aux(i);
   end generate;
   ena_aux(0) <= ena_i;
 end;

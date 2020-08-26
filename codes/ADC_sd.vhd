@@ -6,9 +6,9 @@ use IEEE.std_logic_1164.all;
 
 entity ADC_sd is
   port(
-    clk_m: in std_logic; -- Clock master
-    rst_m: in std_logic; -- Reset master
-    ena_m: in std_logic; -- Enable master
+    clk_i: in std_logic; -- Clock master
+    rst_i: in std_logic; -- Reset master
+    ena_i: in std_logic; -- Enable master
     D_vi: in std_logic; -- Pin D6 de FPGA
     Q_fb: out std_logic; -- Pin D5 de FPGA
     Q_proc: out std_logic -- Para bloque de procesamiento
@@ -40,9 +40,9 @@ signal Q_aux: std_logic; -- Cable auxiliar para Q de ffd
 begin
   ffd0: ffd
     port map(
-      clk_i =>  clk_m,
-      rst_i =>  rst_m,
-      ena_i =>  ena_m,
+      clk_i =>  clk_i,
+      rst_i =>  rst_i,
+      ena_i =>  ena_i,
       D_i   =>  D_vi,
       Q_o   =>  Q_aux
     );

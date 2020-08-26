@@ -1,0 +1,1 @@
+-wto "79316bebb50640a6b5301e4c6698935b" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "Voltimetro_toplevel_behav" "xil_defaultlib.Voltimetro_toplevel" "xil_defaultlib.glbl" -log "elaborate.log" 

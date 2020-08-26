@@ -9,9 +9,9 @@ entity reg_Nb is
     N: natural := 4
   );
   port(
-    clk_m: in std_logic; -- Clock master
-    rst_m: in std_logic; -- Reset master
-    ena_m: in std_logic; -- Enable master
+    clk_i: in std_logic; -- Clock master
+    rst_i: in std_logic; -- Reset master
+    ena_i: in std_logic; -- Enable master
     D_reg: in std_logic_vector(N-1 downto 0); -- Entrada de 4 bits
     Q_reg: out std_logic_vector(N-1 downto 0) -- Entrada de 4 bits
   );
@@ -38,9 +38,9 @@ begin
   ffd_gen: for x in 0 to N-1 generate
     ffdx: ffd
       port map(
-        clk_i =>  clk_m,
-        rst_i =>  rst_m,
-        ena_i =>  ena_m,
+        clk_i =>  clk_i,
+        rst_i =>  rst_i,
+        ena_i =>  ena_i,
         D_i   =>  D_reg(x),
         Q_o   =>  Q_reg(x)
       );

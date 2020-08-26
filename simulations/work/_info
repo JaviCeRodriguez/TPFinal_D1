@@ -1,0 +1,778 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/examples
+Eadc_sd
+Z0 w1597692379
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dZ:/Facultad/Digital_1/TPFinal_D1/simulations
+Z4 8Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd
+Z5 FZ:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd
+l0
+L7
+VWVRk7XS:>[Ek4m5KiWeZ=3
+!s100 Y6bUcOZ5Ib=KTKZz`h`^=0
+Z6 OP;C;10.4a;61
+32
+Z7 !s110 1598139686
+!i10b 1
+Z8 !s108 1598139686.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd|
+Z10 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Aadc_sd_arq
+R1
+R2
+Z13 DEx4 work 6 adc_sd 0 22 WVRk7XS:>[Ek4m5KiWeZ=3
+l40
+L18
+VjH;3WB]FH?b[LSZkP9eNX3
+!s100 B017k1?iaEY5_Tjme7Qeo0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ebcd_counter
+Z14 w1597583497
+R1
+R2
+R3
+Z15 8Z:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd
+Z16 FZ:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd
+l0
+L7
+V1=0Q2AO2mElWE[T<`Ja7X3
+!s100 8lzLUWU];ee<I>mo<CL5<2
+R6
+32
+Z17 !s110 1598139687
+!i10b 1
+Z18 !s108 1598139687.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd|
+Z20 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd|
+!i113 1
+R11
+R12
+Abcd_counter_arq
+Z21 DEx4 work 6 sum_nb 0 22 <haE^aFNiX3S7Yel^]oAe2
+Z22 DEx4 work 6 reg_nb 0 22 FN@:PY;W<DooQA5bCfJLf3
+R1
+R2
+Z23 DEx4 work 11 bcd_counter 0 22 1=0Q2AO2mElWE[T<`Ja7X3
+l34
+L20
+V5]R1k1GDBeU5>;9k]oWOe2
+!s100 dKBcdj?3gWP7fR8Hii=Pc1
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Ec33k
+Z24 w1597600619
+R1
+R2
+R3
+Z25 8Z:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd
+Z26 FZ:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd
+l0
+L7
+Vh73R?GO5B9nETPWlO04B11
+!s100 PSPnVGd6XWG2FaAUR7A5^1
+R6
+32
+Z27 !s110 1598139688
+!i10b 1
+Z28 !s108 1598139688.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd|
+Z30 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd|
+!i113 1
+R11
+R12
+Ac33k_arq
+R21
+R22
+R1
+R2
+Z31 DEx4 work 4 c33k 0 22 h73R?GO5B9nETPWlO04B11
+l35
+L20
+Vo=l=Y=PVNFf@778de@3_W0
+!s100 @66P4F[S3Fb>Vna77DEm@2
+R6
+32
+R27
+!i10b 1
+R28
+R29
+R30
+!i113 1
+R11
+R12
+Echor
+Z32 w1597605555
+R1
+R2
+R3
+Z33 8Z:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd
+Z34 FZ:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd
+l0
+L7
+VgU3<7Q7^LG8A`fbSXR^_31
+!s100 dlSS?<45:d98M@Ba40>B:3
+R6
+32
+R27
+!i10b 1
+R28
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd|
+Z36 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd|
+!i113 1
+R11
+R12
+Achor_arq
+R21
+R22
+R1
+R2
+Z37 DEx4 work 4 chor 0 22 gU3<7Q7^LG8A`fbSXR^_31
+l33
+L20
+VnkM4GQVUa?_M6BK72Vdhd3
+!s100 AdABDdm=iheg@hz?F@MfS3
+R6
+32
+R27
+!i10b 1
+R28
+R35
+R36
+!i113 1
+R11
+R12
+Econes
+Z38 w1597557293
+Z39 DPx4 work 5 utils 0 22 ]o`H;I[l0ZCOGh=Bd9B9G2
+R1
+R2
+R3
+Z40 8Z:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd
+Z41 FZ:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd
+l0
+L8
+VQPAQ4DXa8Gc4mg1?UhWEa1
+!s100 UdgMVF971cgV5dgFD@DK:2
+R6
+32
+R27
+!i10b 1
+R18
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd|
+Z43 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd|
+!i113 1
+R11
+R12
+Acones_arq
+R23
+R39
+R1
+R2
+Z44 DEx4 work 5 cones 0 22 QPAQ4DXa8Gc4mg1?UhWEa1
+l31
+L21
+V^>U=Kb_Qa=[`VZ9>Ol@0V0
+!s100 Y6XoDhglN^Vl6<RjozCZ;1
+R6
+32
+R27
+!i10b 1
+R18
+R42
+R43
+!i113 1
+R11
+R12
+Ecver
+Z45 w1597605661
+R1
+R2
+R3
+Z46 8Z:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd
+Z47 FZ:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd
+l0
+L7
+Vn9l>_:E4oWB;`GB[Ni2jD2
+!s100 4D;VXh3@MoedV@dMH<KnD1
+R6
+32
+R27
+!i10b 1
+R28
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd|
+Z49 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd|
+!i113 1
+R11
+R12
+Acver_arq
+R21
+R22
+R1
+R2
+Z50 DEx4 work 4 cver 0 22 n9l>_:E4oWB;`GB[Ni2jD2
+l33
+L20
+VzNW]AGa2>6G0TKXJozf^72
+!s100 hj:<]05m[bfJ7S]]UKN7K0
+R6
+32
+R27
+!i10b 1
+R28
+R48
+R49
+!i113 1
+R11
+R12
+Effd
+Z51 w1597551309
+R1
+R2
+R3
+Z52 8Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd
+Z53 FZ:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd
+l0
+L6
+V^=bFViLGHFJ53KBTDb<To1
+!s100 F6Mdi@mM7FL^PJH;3gBUF1
+R6
+32
+R7
+!i10b 1
+R8
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd|
+Z55 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd|
+!i113 1
+R11
+R12
+Affd_arq
+R1
+R2
+Z56 DEx4 work 3 ffd 0 22 ^=bFViLGHFJ53KBTDb<To1
+l20
+L16
+VodLe75I:6jg9bK=`i7R1=3
+!s100 lBFZ@IkKREbFQTdLmA9OX1
+R6
+32
+R7
+!i10b 1
+R8
+R54
+R55
+!i113 1
+R11
+R12
+Egenpulsos_voltimetro
+Z57 w1597427209
+R1
+R2
+R3
+Z58 8Z:/Facultad/Digital_1/TPFinal_D1/codes/genPulsos_Voltimetro.vhd
+Z59 FZ:/Facultad/Digital_1/TPFinal_D1/codes/genPulsos_Voltimetro.vhd
+l0
+L12
+Vz3g_K9`Db]HRCdF`8BhBk3
+!s100 :iHiWC;_mNDSHabJ=NXRU3
+R6
+32
+R17
+!i10b 1
+R18
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/genPulsos_Voltimetro.vhd|
+Z61 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/genPulsos_Voltimetro.vhd|
+!i113 1
+R11
+R12
+Agenpulsos_voltimetro_arq
+R1
+R2
+Z62 DEx4 work 20 genpulsos_voltimetro 0 22 z3g_K9`Db]HRCdF`8BhBk3
+l25
+L23
+VEcKH[JFgV@lbMJQRdI;Q?2
+!s100 cD7X:aX1E_WTN]Vd_^Kkg3
+R6
+32
+R17
+!i10b 1
+R18
+R60
+R61
+!i113 1
+R11
+R12
+Emux
+Z63 w1597621837
+R39
+R1
+R2
+R3
+Z64 8Z:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd
+Z65 FZ:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd
+l0
+L7
+VCGJ4E_V7lca6KTc]mNCK@0
+!s100 k<D@nN^^]4oa;iS>OMgJJ2
+R6
+32
+R7
+!i10b 1
+R8
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd|
+Z67 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd|
+!i113 1
+R11
+R12
+Amux_arq
+R39
+R1
+R2
+Z68 DEx4 work 3 mux 0 22 CGJ4E_V7lca6KTc]mNCK@0
+l30
+L19
+V[PMW5Ad:`_Oh>bmLIg@kS3
+!s100 gZ?IokYXGlZ4H:caVC?bF1
+R6
+32
+R7
+!i10b 1
+R8
+R66
+R67
+!i113 1
+R11
+R12
+Ereg_nb
+Z69 w1597497958
+R1
+R2
+R3
+Z70 8Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd
+Z71 FZ:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd
+l0
+L7
+VFN@:PY;W<DooQA5bCfJLf3
+!s100 ei_28liU9G02@9@i^O@5Y0
+R6
+32
+R17
+!i10b 1
+R8
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd|
+Z73 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd|
+!i113 1
+R11
+R12
+Areg_nb_arq
+R1
+R2
+R22
+l37
+L20
+VPDO19jof3kA`B<b3HTDfR0
+!s100 9:XL[m3Mib=?S3Ti9PeOY2
+R6
+32
+R17
+!i10b 1
+R8
+R72
+R73
+!i113 1
+R11
+R12
+Erom
+Z74 w1596604635
+Z75 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R3
+Z76 8Z:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd
+Z77 FZ:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd
+l0
+L7
+VehYQefFBoSXDi5OE=[mmD0
+!s100 =b76ZHGR`YCd`TWlQ1o373
+R6
+32
+R27
+!i10b 1
+R28
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd|
+Z79 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd|
+!i113 1
+R11
+R12
+Arom_arq
+R75
+R1
+R2
+Z80 DEx4 work 3 rom 0 22 ehYQefFBoSXDi5OE=[mmD0
+l39
+L16
+VnB;biKGPhbeHA9D<`1bkm0
+!s100 lhNY8?F?fa@aG=Vfn=O_50
+R6
+32
+R27
+!i10b 1
+R28
+R78
+R79
+!i113 1
+R11
+R12
+Esum_1b
+Z81 w1596297667
+R1
+R2
+R3
+Z82 8Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd
+Z83 FZ:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd
+l0
+L6
+VM0e8kSPAdA@j6jhhW[Yc^2
+!s100 H4<MXmbzd<3Bm]TNekGKL3
+R6
+32
+R7
+!i10b 1
+R8
+Z84 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd|
+Z85 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd|
+!i113 1
+R11
+R12
+Asumb_1b_arq
+R1
+R2
+Z86 DEx4 work 6 sum_1b 0 22 M0e8kSPAdA@j6jhhW[Yc^2
+l17
+L16
+V?>25e27m^VT7A^LNK30>J2
+!s100 0d>0FHBcfN<TlW<2K1oI<3
+R6
+32
+R7
+!i10b 1
+R8
+R84
+R85
+!i113 1
+R11
+R12
+Esum_nb
+Z87 w1597547781
+R1
+R2
+R3
+Z88 8Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd
+Z89 FZ:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd
+l0
+L7
+V<haE^aFNiX3S7Yel^]oAe2
+!s100 SJ_<[b519c@md7l=T<Y4g3
+R6
+32
+R17
+!i10b 1
+R18
+Z90 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd|
+Z91 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd|
+!i113 1
+R11
+R12
+Asum_nb_arq
+R86
+R1
+R2
+R21
+l22
+L20
+Ve:TCCBRVglC<iIE9HNXbE2
+!s100 =K;H`;_;5Eii5YX]>8Onc0
+R6
+32
+R17
+!i10b 1
+R18
+R90
+R91
+!i113 1
+R11
+R12
+Etest0
+Z92 w1597623561
+R39
+R75
+R1
+R2
+R3
+Z93 8Z:/Facultad/Digital_1/TPFinal_D1/codes/Test0.vhd
+Z94 FZ:/Facultad/Digital_1/TPFinal_D1/codes/Test0.vhd
+l0
+L9
+V>iZmT9zGkmk@1oIP0lNJm3
+!s100 MO2DKc^h57CZHBf=kM=Qe2
+R6
+32
+Z95 !s110 1598050580
+!i10b 1
+Z96 !s108 1598050580.000000
+Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/Test0.vhd|
+Z98 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/Test0.vhd|
+!i113 1
+R11
+R12
+Atest0_arq
+Z99 DEx4 work 3 vga 0 22 zbalc>eehAOZ9cOjjVL7M0
+R80
+R68
+R22
+R31
+R44
+R62
+R39
+R75
+R1
+R2
+DEx4 work 5 test0 0 22 >iZmT9zGkmk@1oIP0lNJm3
+l33
+L22
+VIB1^hjRYe:H36JXUcM]3k0
+!s100 fSMSdVk<;kBQb1h`iIa>[2
+R6
+32
+R95
+!i10b 1
+R96
+R97
+R98
+!i113 1
+R11
+R12
+Etest0_tb
+Z100 w1597693835
+R1
+R2
+R3
+Z101 8Z:/Facultad/Digital_1/TPFinal_D1/codes/Test0_tb.vhd
+Z102 FZ:/Facultad/Digital_1/TPFinal_D1/codes/Test0_tb.vhd
+l0
+L4
+VRh2:R4c0i`63a?NHoVl>C1
+!s100 4I=D5BEKhh_d8j2Yl^EFF1
+R6
+32
+Z103 !s110 1598050581
+!i10b 1
+Z104 !s108 1598050581.000000
+Z105 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/Test0_tb.vhd|
+Z106 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/Test0_tb.vhd|
+!i113 1
+R11
+R12
+Atest0_tb_arq
+R1
+R2
+DEx4 work 8 test0_tb 0 22 Rh2:R4c0i`63a?NHoVl>C1
+l30
+L7
+VdA6;?]Zf4G^aALIc:fVmi2
+!s100 1j^onC=BgD;CL_M6>cg[C0
+R6
+32
+R103
+!i10b 1
+R104
+R105
+R106
+!i113 1
+R11
+R12
+Putils
+R1
+R2
+w1596505466
+R3
+8Z:/Facultad/Digital_1/TPFinal_D1/codes/utils.vhd
+FZ:/Facultad/Digital_1/TPFinal_D1/codes/utils.vhd
+l0
+L6
+V]o`H;I[l0ZCOGh=Bd9B9G2
+!s100 RO@9>Q`3g6b77cg0EaSI[3
+R6
+32
+!s110 1598139685
+!i10b 1
+!s108 1598139685.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/utils.vhd|
+!s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/utils.vhd|
+!i113 1
+R11
+R12
+Evga
+Z107 w1597539201
+R75
+R1
+R2
+R3
+Z108 8Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd
+Z109 FZ:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd
+l0
+L8
+Vzbalc>eehAOZ9cOjjVL7M0
+!s100 Tj@b8V78MPHPRzI@>0:;;0
+R6
+32
+Z110 !s110 1598139689
+!i10b 1
+Z111 !s108 1598139689.000000
+Z112 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd|
+Z113 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd|
+!i113 1
+R11
+R12
+Avga_arq
+R50
+R56
+R37
+R75
+R1
+R2
+R99
+l38
+L28
+Vj6_m0Y838H`?8CNVIllGo1
+!s100 =3Pb=]`BKDmUz]7J7<27[2
+R6
+32
+R110
+!i10b 1
+R111
+R112
+R113
+!i113 1
+R11
+R12
+Evoltimetro
+Z114 w1598139678
+R75
+R39
+R1
+R2
+R3
+Z115 8Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd
+Z116 FZ:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd
+l0
+L6
+ViN[GR9?fh<9SJzcbKDBQH2
+!s100 WYKT8g90J=XCU]I^Z?OM^1
+R6
+32
+R110
+!i10b 1
+R111
+Z117 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd|
+Z118 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd|
+!i113 1
+R11
+R12
+Avoltimetro_arq
+R99
+R80
+R68
+R22
+R31
+R44
+R13
+R75
+R39
+R1
+R2
+DEx4 work 10 voltimetro 0 22 iN[GR9?fh<9SJzcbKDBQH2
+l35
+L23
+V[:V><QDfP9U1LJz^bUzDg2
+!s100 HkRBe7a]Dk;h?Z70=]=SD1
+R6
+32
+R110
+!i10b 1
+R111
+R117
+R118
+!i113 1
+R11
+R12
+Evoltimetro_toplevel
+Z119 w1598139364
+R75
+R1
+R2
+R3
+Z120 8Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd
+Z121 FZ:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd
+l0
+L13
+V5GUndMhob_H@=TL=mlcI91
+!s100 dW7li1@[PVd^83XEHd=A:3
+R6
+32
+R110
+!i10b 1
+R111
+Z122 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd|
+Z123 !s107 Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd|
+!i113 1
+R11
+R12
+Avoltimetro_toplevel_arq
+R75
+R1
+R2
+Z124 DEx4 work 19 voltimetro_toplevel 0 22 5GUndMhob_H@=TL=mlcI91
+l86
+L57
+Z125 Vj:=>3gjc0lDF9mD=R7m8B0
+Z126 !s100 1z86`KT9cj]:l3mAe8]nZ3
+R6
+32
+R110
+!i10b 1
+R111
+R122
+R123
+!i113 1
+R11
+R12

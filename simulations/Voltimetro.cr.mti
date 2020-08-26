@@ -1,0 +1,163 @@
+Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity sum_1b
+-- Compiling architecture sumb_1b_arq of sum_1b
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity BCD_counter
+-- Compiling architecture BCD_counter_arq of BCD_counter
+-- Loading entity reg_Nb
+-- Loading entity sum_Nb
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package utils
+-- Compiling entity cOnes
+-- Compiling architecture cOnes_arq of cOnes
+-- Loading entity BCD_counter
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity cVer
+-- Compiling architecture cVer_arq of cVer
+-- Loading entity reg_Nb
+-- Loading entity sum_Nb
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Voltimetro_toplevel
+-- Compiling architecture Voltimetro_toplevel_arq of Voltimetro_toplevel
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity sum_Nb
+-- Compiling architecture sum_Nb_arq of sum_Nb
+-- Loading entity sum_1b
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/genPulsos_Voltimetro.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/genPulsos_Voltimetro.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity genPulsos_Voltimetro
+-- Compiling architecture genPulsos_Voltimetro_arq of genPulsos_Voltimetro
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity c33k
+-- Compiling architecture c33k_arq of C33k
+-- Loading entity reg_Nb
+-- Loading entity sum_Nb
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package utils
+-- Loading package NUMERIC_STD
+-- Compiling entity Voltimetro
+-- Compiling architecture Voltimetro_arq of Voltimetro
+-- Loading entity ADC_sd
+-- Loading entity cOnes
+-- Loading entity c33k
+-- Loading entity reg_Nb
+-- Loading entity mux
+-- Loading entity ROM
+-- Loading entity VGA
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity reg_Nb
+-- Compiling architecture reg_Nb_arq of reg_Nb
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ADC_sd
+-- Compiling architecture ADC_sd_arq of ADC_sd
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ffd
+-- Compiling architecture ffd_arq of ffd
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/utils.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/utils.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package utils
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package utils
+-- Compiling entity mux
+-- Compiling architecture mux_arq of mux
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity cHor
+-- Compiling architecture cHor_arq of cHor
+-- Loading entity reg_Nb
+-- Loading entity sum_Nb
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ROM
+-- Compiling architecture ROM_arq of ROM
+
+} {} {}} Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity VGA
+-- Compiling architecture VGA_arq of VGA
+-- Loading entity cHor
+-- Loading entity ffd
+-- Loading entity cVer
+
+} {} {}}
