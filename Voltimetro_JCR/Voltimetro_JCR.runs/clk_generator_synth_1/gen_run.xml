@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="clk_generator_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1598233455">
+<GenRun Id="clk_generator_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1598463512">
   <File Type="PA-TCL" Name="clk_generator.tcl"/>
   <File Type="REPORTS-TCL" Name="clk_generator_reports.tcl"/>
   <File Type="RDS-RDS" Name="clk_generator.vds"/>

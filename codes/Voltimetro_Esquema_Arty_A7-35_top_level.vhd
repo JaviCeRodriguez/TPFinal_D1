@@ -6,21 +6,26 @@
 --
 -- Fecha: 		18/08/20
 ----------------------------------------------------------------------------------
+
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity Voltimetro_toplevel is
 	port(
-		clk_i			: in std_logic;
-		rst_i			: in std_logic;
-		data_volt_in_i	: in std_logic;
-		data_volt_out_o	: out std_logic;
-		hs_o 			: out std_logic;
-		vs_o 			: out std_logic;
-		red_o 			: out std_logic;
-		grn_o 			: out std_logic;
-		blu_o 			: out std_logic
+		clk_i			: in std_logic;		-- Clock
+		rst_i			: in std_logic;		-- Reset
+		data_volt_in_i	: in std_logic;		-- Señal de entrada
+		data_volt_out_o	: out std_logic;	-- Señal de realimentación
+		hs_o 			: out std_logic;	-- Sincronismo horizontal
+		vs_o 			: out std_logic;	-- Sincronismo vertical
+		red_o 			: out std_logic;	-- Rojo
+		grn_o 			: out std_logic;	-- Verde
+		blu_o 			: out std_logic		-- Azul
 	);
 
 	-- Mapeo de pines para el kit Arty A7-35
@@ -59,51 +64,51 @@ architecture Voltimetro_toplevel_arq of Voltimetro_toplevel is
 	-- Declaracion del componente voltimetro
 	component Voltimetro is
 		port(
-			clk_i: in std_logic;
-			rst_i: in std_logic;
-			data_volt_in_i: in std_logic;
-			data_volt_out_o: out std_logic;
-			hs_o : out std_logic;
-			vs_o : out std_logic;
-			red_o : out std_logic;
-			grn_o : out std_logic;
-			blu_o : out std_logic
+			clk_i: in std_logic;				-- Clock
+			rst_i: in std_logic;				-- Reset
+			data_volt_in_i: in std_logic;		-- Señal de entrada
+			data_volt_out_o: out std_logic;		-- Señal de realimentación
+			hs_o : out std_logic;				-- Sincronismo horizontal
+			vs_o : out std_logic;				-- Sincronismo vertical
+			red_o : out std_logic;				-- Rojo
+			grn_o : out std_logic;				-- Verde
+			blu_o : out std_logic				-- Azul
 		);
 	end component Voltimetro;
 
 	-- Declaracion del compoente generador de reloj (MMCM - Mixed Mode Clock Manager)
+	-- Para este componente, es necesario agregar en Vivado el Clocking Wizard desde IP Catalog
 	component clk_generator
 		port (
 			-- Clock in ports
-			clk_i: in std_logic;
+			clk_i: in std_logic;				-- Clock de entrada (100 MHz)
 	  		-- Clock out ports
-	  		clk_o: out std_logic
+	  		clk_o: out std_logic				-- Clock de salida (25 MHz)
 	 );
 	end component;
 
 	signal clk25MHz: std_logic;
 
 begin
-
 	-- Generador del reloj lento
 	clk25MHz_gen : clk_generator
    		port map (
-   			clk_i	=> clk_i,		-- reloj del sistema (100 MHz)
-   			clk_o	=> clk25MHz		-- reloj generado (25 MHz)
+   			clk_i	=> clk_i,					-- Clock del sistema (100 MHz)
+   			clk_o	=> clk25MHz					-- Clock generado (25 MHz)
  		);
 
 	-- Instancia del bloque voltimetro
 	inst_voltimetro: Voltimetro
 		port map(
-            clk_i			=> clk25MHz,
-            rst_i			=> rst_i,
-            data_volt_in_i	=> data_volt_in_i,
-            data_volt_out_o	=> data_volt_out_o,
-            hs_o			=> hs_o,
-            vs_o			=> vs_o,
-            red_o			=> red_o,
-            grn_o			=> grn_o,
-            blu_o			=> blu_o
+            clk_i			=> clk25MHz,		-- Clock generado
+            rst_i			=> rst_i,			-- Reset
+            data_volt_in_i	=> data_volt_in_i,	-- Señal de entrada
+            data_volt_out_o	=> data_volt_out_o,	-- Señal de realimentación
+            hs_o			=> hs_o,			-- Sincronismo horizontal
+            vs_o			=> vs_o,			-- Sincronismo vertical
+            red_o			=> red_o,			-- Rojo
+            grn_o			=> grn_o,			-- Verde
+            blu_o			=> blu_o			-- Azul
         );
 
 end Voltimetro_toplevel_arq;

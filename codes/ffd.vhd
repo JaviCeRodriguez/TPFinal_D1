@@ -1,5 +1,9 @@
 -- Flip Flop D con reset y enable
 
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -14,9 +18,6 @@ entity ffd is
 end;
 
 architecture ffd_arq of ffd is
-----------------------------------------------
---              Arquitectura                --
-----------------------------------------------
 begin
 	process(clk_i)
 	begin

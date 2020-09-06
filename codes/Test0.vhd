@@ -1,5 +1,10 @@
--- Codigo para probar voltimetro sin parte analogica de la FPGA
--- Utilizo TODOS los codigos hechos, excepto ADC_sd.vhd
+-- Codigo para probar voltimetro sin parte analogica
+-- Utilizo todos los códigos con el generador de pulsos (menos el ADC)
+-- ATENCION: Hay leves diferencias con el código Voltimetro.vhd
+
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -107,17 +112,17 @@ begin
   -- VGA
   Monitor4K: entity work.VGA
     port map(
-      clk_i   => clk_i,
-      rst_i   => rst_i,
-      red_i   => enchufe9,
-      grn_i   => enchufe9,
-      blu_i   => '1',
-      hsync   => hs,
-      vsync   => vs,
-      red_o   => red,
-      grn_o   => green,
-      blu_o   => blue,
-      pixel_x => enchufe7,
-      pixel_y => enchufe8
+      clk_i   => clk_i, -- Clock
+      rst_i   => rst_i, -- Reset
+      red_i   => enchufe9, -- Entrada rojo
+      grn_i   => enchufe9, -- Entrada verde
+      blu_i   => '1', -- Entrada azul
+      hsync   => hs, -- Sincronismo horizontal
+      vsync   => vs, -- Sincronismo vertical
+      red_o   => red, -- Salida rojo
+      grn_o   => green, -- Salida verde
+      blu_o   => blue, -- Salida azul
+      pixel_x => enchufe7, -- Pixel x
+      pixel_y => enchufe8 -- Pixel y
     );
 end;

@@ -1,5 +1,8 @@
 -- Contador de unos
--- Utilizo: ffd.vhd, reg_Nb, BCD_counter.vhd, sum_Nb.vhd, sum_1b.vhd
+
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -19,15 +22,9 @@ entity cOnes is
 end;
 
 architecture cOnes_arq of cOnes is
-----------------------------------------------
---                Seniales                  --
-----------------------------------------------
 signal ena_aux: std_logic_vector (N downto 0);
 signal max_aux: std_logic_vector (N-1 downto 0);
 
-----------------------------------------------
---              Arquitectura                --
-----------------------------------------------
 begin
   cOnes_gen: for i in 0 to N-1 generate
     BCD_counterN: entity work.BCD_counter

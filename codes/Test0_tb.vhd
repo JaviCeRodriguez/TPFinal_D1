@@ -1,3 +1,10 @@
+-- Testbench para probar voltimetro sin parte analógica
+-- (hay que sacar de la conexión el ADC y meter el generador de pulsos)
+
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 

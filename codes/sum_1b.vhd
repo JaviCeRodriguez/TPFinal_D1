@@ -1,5 +1,9 @@
 -- Sumador de 1 bit
 
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 

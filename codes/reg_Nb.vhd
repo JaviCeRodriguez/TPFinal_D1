@@ -1,5 +1,8 @@
 -- Registro de 4 bits
--- Utilizo: ffd.vhd
+
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -9,18 +12,15 @@ entity reg_Nb is
     N: natural := 4
   );
   port(
-    clk_i: in std_logic; -- Clock master
-    rst_i: in std_logic; -- Reset master
-    ena_i: in std_logic; -- Enable master
+    clk_i: in std_logic; -- Clock
+    rst_i: in std_logic; -- Reset
+    ena_i: in std_logic; -- Enable
     D_reg: in std_logic_vector(N-1 downto 0); -- Entrada de 4 bits
     Q_reg: out std_logic_vector(N-1 downto 0) -- Entrada de 4 bits
   );
 end;
 
 architecture reg_Nb_arq of reg_Nb is
-----------------------------------------------
---              Componentes                 --
-----------------------------------------------
 component ffd -- Invoco codigo de Flip Flop D
   port(
     clk_i: in std_logic; -- Clock
@@ -31,18 +31,15 @@ component ffd -- Invoco codigo de Flip Flop D
   );
 end component;
 
-----------------------------------------------
---              Arquitectura                --
-----------------------------------------------
 begin
-  ffd_gen: for x in 0 to N-1 generate
+  ffd_gen: for x in 0 to N-1 generate -- Genero registros de 4 bits
     ffdx: ffd
       port map(
-        clk_i =>  clk_i,
-        rst_i =>  rst_i,
-        ena_i =>  ena_i,
-        D_i   =>  D_reg(x),
-        Q_o   =>  Q_reg(x)
+        clk_i =>  clk_i,    -- Clock
+        rst_i =>  rst_i,    -- Reset
+        ena_i =>  ena_i,    -- Enable
+        D_i   =>  D_reg(x), -- D
+        Q_o   =>  Q_reg(x)  -- Q
       );
   end generate ffd_gen;
 end;

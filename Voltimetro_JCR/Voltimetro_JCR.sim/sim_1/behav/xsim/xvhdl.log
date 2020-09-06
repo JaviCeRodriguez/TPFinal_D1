@@ -1,2 +1,6 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Voltimetro_toplevel
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity VGA
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Voltimetro
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Facultad/Digital_1/TPFinal_D1/codes/VoltimetroTL_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity VoltimetroTL_tb

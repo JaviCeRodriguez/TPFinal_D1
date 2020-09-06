@@ -1,25 +1,26 @@
 --- ROM con caracteres almacenados
 
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity ROM is
   port(
-    fHor: in std_logic_vector(2 downto 0);
-    fVer: in std_logic_vector(2 downto 0);
-    Addr: in std_logic_vector(3 downto 0);
-    sROM_o: out std_logic
+    fHor: in std_logic_vector(2 downto 0); -- Bits 9 downto 7 de pixel x
+    fVer: in std_logic_vector(2 downto 0); -- Bits 9 downto 7 de pixel y
+    Addr: in std_logic_vector(3 downto 0); -- Bus de datos del multiplexor
+    sROM_o: out std_logic                  -- Salida serie de ROM
   );
 end;
 
 architecture ROM_arq of ROM is
-----------------------------------------------
---                Seniales                  --
-----------------------------------------------
 signal AddrVer: std_logic_vector(6 downto 0);
 type neo is array (0 to 95) of std_logic_vector(0 to 7);
--- El indice de pixChar es BCD unido a fVer (transformado a entero)
+-- El indice de pixChar es Addr unido a fVer (transformado a entero)
 constant pixChar: neo := ("00000000", "00111100", "01000110", "01001010", "01010010", "01100010", "00111100", "00000000", -- 0: 0000
                           "00000000", "00001000", "00011000", "00101000", "00001000", "00001000", "00111100", "00000000", -- 1: 0001
                           "00000000", "00111100", "01000010", "00000100", "00001000", "00110000", "01111110", "00000000", -- 2: 0010
@@ -33,10 +34,7 @@ constant pixChar: neo := ("00000000", "00111100", "01000110", "01001010", "01010
                           "00000000", "00000000", "00000000", "00000000", "00000000", "00011000", "00011000", "00000000", -- .: 1010
                           "00000000", "01000010", "01000010", "00100100", "00100100", "00011000", "00011000", "00000000"); -- V: 1011
 
-----------------------------------------------
---              Arquitectura                --
-----------------------------------------------
 begin
-  AddrVer <= Addr & fVer;
+  AddrVer <= Addr & fVer; -- Uno los datos de Addr y fVer
   sROM_o <= pixChar(to_integer(unsigned(AddrVer)))(to_integer(unsigned(fHor))); -- Tomo un pixel (bit) de pixChar
 end;

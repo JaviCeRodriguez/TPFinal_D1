@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Mon Aug 24 19:55:47 2020
+| Date         : Sat Sep  5 11:44:29 2020
 | Host         : DESKTOP-ARKS4GD running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Voltimetro_toplevel_timing_summary_routed.rpt -pb Voltimetro_toplevel_timing_summary_routed.pb -rpx Voltimetro_toplevel_timing_summary_routed.rpx -warn_on_violation
 | Design       : Voltimetro_toplevel
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     34.963        0.000                      0                  170        0.194        0.000                      0                  170        3.000        0.000                       0                    77  
+     34.591        0.000                      0                  206        0.171        0.000                      0                  206        3.000        0.000                       0                    91  
 
 
 All user specified timing constraints are met.
@@ -152,7 +152,7 @@ clk_i                     {0.000 5.000}      10.000          100.000
 Clock                         WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----                         -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 clk_i                                                                                                                                                                       3.000        0.000                       0                     1  
-  clk_o_clk_generator          34.963        0.000                      0                  170        0.194        0.000                      0                  170       19.500        0.000                       0                    73  
+  clk_o_clk_generator          34.591        0.000                      0                  206        0.171        0.000                      0                  206       19.500        0.000                       0                    87  
   clkfbout_clk_generator                                                                                                                                                    7.845        0.000                       0                     3  
 
 
@@ -211,15 +211,15 @@ High Pulse Width  Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000 
 From Clock:  clk_o_clk_generator
   To Clock:  clk_o_clk_generator
 
-Setup :            0  Failing Endpoints,  Worst Slack       34.963ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.194ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       34.591ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.171ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack       19.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             34.963ns  (required time - arrival time)
+Slack (MET) :             34.591ns  (required time - arrival time)
   Source:                 inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
@@ -227,11 +227,11 @@ Slack (MET) :             34.963ns  (required time - arrival time)
   Path Group:             clk_o_clk_generator
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.485ns  (logic 1.118ns (24.927%)  route 3.367ns (75.073%))
+  Data Path Delay:        4.858ns  (logic 1.118ns (23.015%)  route 3.740ns (76.985%))
   Logic Levels:           3  (LUT5=2 LUT6=1)
   Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.452ns = ( 38.548 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.850ns
+    Destination Clock Delay (DCD):    -1.451ns = ( 38.549 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.849ns
     Clock Pessimism Removal (CPR):    0.577ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -250,18 +250,18 @@ Slack (MET) :             34.963ns  (required time - arrival time)
                                                      -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.617    -0.850    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X6Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          1.618    -0.849    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X6Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y87          FDRE (Prop_fdre_C_Q)         0.518    -0.332 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.256     0.924    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
-    SLICE_X6Y87          LUT5 (Prop_lut5_I0_O)        0.148     1.072 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__2/O
-                         net (fo=7, routed)           0.762     1.834    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
-    SLICE_X4Y86          LUT5 (Prop_lut5_I4_O)        0.328     2.162 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__1/O
-                         net (fo=5, routed)           0.463     2.624    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
-    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     2.748 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__1/O
-                         net (fo=4, routed)           0.887     3.635    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/rst_aux
-    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
+    SLICE_X6Y88          FDRE (Prop_fdre_C_Q)         0.518    -0.331 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=6, routed)           1.418     1.087    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
+    SLICE_X6Y88          LUT5 (Prop_lut5_I0_O)        0.148     1.235 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__4/O
+                         net (fo=9, routed)           0.762     1.997    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
+    SLICE_X4Y87          LUT5 (Prop_lut5_I4_O)        0.328     2.325 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__3/O
+                         net (fo=5, routed)           0.970     3.294    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
+    SLICE_X4Y88          LUT6 (Prop_lut6_I1_O)        0.124     3.418 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__4/O
+                         net (fo=4, routed)           0.590     4.009    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/rst_aux
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -274,18 +274,18 @@ Slack (MET) :             34.963ns  (required time - arrival time)
                                                      -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.500    38.548    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
-    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
-                         clock pessimism              0.577    39.125    
-                         clock uncertainty           -0.098    39.027    
-    SLICE_X4Y87          FDRE (Setup_fdre_C_R)       -0.429    38.598    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg
+                         net (fo=85, routed)          1.501    38.549    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
+                         clock pessimism              0.577    39.126    
+                         clock uncertainty           -0.098    39.028    
+    SLICE_X4Y88          FDRE (Setup_fdre_C_R)       -0.429    38.599    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                         38.598    
-                         arrival time                          -3.635    
+                         required time                         38.599    
+                         arrival time                          -4.009    
   -------------------------------------------------------------------
-                         slack                                 34.963    
+                         slack                                 34.591    
 
-Slack (MET) :             34.963ns  (required time - arrival time)
+Slack (MET) :             34.591ns  (required time - arrival time)
   Source:                 inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/R
@@ -293,11 +293,11 @@ Slack (MET) :             34.963ns  (required time - arrival time)
   Path Group:             clk_o_clk_generator
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.485ns  (logic 1.118ns (24.927%)  route 3.367ns (75.073%))
+  Data Path Delay:        4.858ns  (logic 1.118ns (23.015%)  route 3.740ns (76.985%))
   Logic Levels:           3  (LUT5=2 LUT6=1)
   Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.452ns = ( 38.548 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.850ns
+    Destination Clock Delay (DCD):    -1.451ns = ( 38.549 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.849ns
     Clock Pessimism Removal (CPR):    0.577ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -316,18 +316,18 @@ Slack (MET) :             34.963ns  (required time - arrival time)
                                                      -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.617    -0.850    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X6Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          1.618    -0.849    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X6Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y87          FDRE (Prop_fdre_C_Q)         0.518    -0.332 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.256     0.924    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
-    SLICE_X6Y87          LUT5 (Prop_lut5_I0_O)        0.148     1.072 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__2/O
-                         net (fo=7, routed)           0.762     1.834    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
-    SLICE_X4Y86          LUT5 (Prop_lut5_I4_O)        0.328     2.162 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__1/O
-                         net (fo=5, routed)           0.463     2.624    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
-    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     2.748 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__1/O
-                         net (fo=4, routed)           0.887     3.635    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/rst_aux
-    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/R
+    SLICE_X6Y88          FDRE (Prop_fdre_C_Q)         0.518    -0.331 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=6, routed)           1.418     1.087    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
+    SLICE_X6Y88          LUT5 (Prop_lut5_I0_O)        0.148     1.235 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__4/O
+                         net (fo=9, routed)           0.762     1.997    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
+    SLICE_X4Y87          LUT5 (Prop_lut5_I4_O)        0.328     2.325 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__3/O
+                         net (fo=5, routed)           0.970     3.294    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
+    SLICE_X4Y88          LUT6 (Prop_lut6_I1_O)        0.124     3.418 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__4/O
+                         net (fo=4, routed)           0.590     4.009    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/rst_aux
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -340,18 +340,18 @@ Slack (MET) :             34.963ns  (required time - arrival time)
                                                      -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.500    38.548    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/clk_i
-    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
-                         clock pessimism              0.577    39.125    
-                         clock uncertainty           -0.098    39.027    
-    SLICE_X4Y87          FDRE (Setup_fdre_C_R)       -0.429    38.598    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg
+                         net (fo=85, routed)          1.501    38.549    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/clk_i
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
+                         clock pessimism              0.577    39.126    
+                         clock uncertainty           -0.098    39.028    
+    SLICE_X4Y88          FDRE (Setup_fdre_C_R)       -0.429    38.599    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                         38.598    
-                         arrival time                          -3.635    
+                         required time                         38.599    
+                         arrival time                          -4.009    
   -------------------------------------------------------------------
-                         slack                                 34.963    
+                         slack                                 34.591    
 
-Slack (MET) :             34.963ns  (required time - arrival time)
+Slack (MET) :             34.591ns  (required time - arrival time)
   Source:                 inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/R
@@ -359,11 +359,11 @@ Slack (MET) :             34.963ns  (required time - arrival time)
   Path Group:             clk_o_clk_generator
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.485ns  (logic 1.118ns (24.927%)  route 3.367ns (75.073%))
+  Data Path Delay:        4.858ns  (logic 1.118ns (23.015%)  route 3.740ns (76.985%))
   Logic Levels:           3  (LUT5=2 LUT6=1)
   Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.452ns = ( 38.548 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.850ns
+    Destination Clock Delay (DCD):    -1.451ns = ( 38.549 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.849ns
     Clock Pessimism Removal (CPR):    0.577ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -382,18 +382,18 @@ Slack (MET) :             34.963ns  (required time - arrival time)
                                                      -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.617    -0.850    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X6Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          1.618    -0.849    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X6Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y87          FDRE (Prop_fdre_C_Q)         0.518    -0.332 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.256     0.924    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
-    SLICE_X6Y87          LUT5 (Prop_lut5_I0_O)        0.148     1.072 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__2/O
-                         net (fo=7, routed)           0.762     1.834    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
-    SLICE_X4Y86          LUT5 (Prop_lut5_I4_O)        0.328     2.162 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__1/O
-                         net (fo=5, routed)           0.463     2.624    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
-    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     2.748 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__1/O
-                         net (fo=4, routed)           0.887     3.635    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/rst_aux
-    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/R
+    SLICE_X6Y88          FDRE (Prop_fdre_C_Q)         0.518    -0.331 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=6, routed)           1.418     1.087    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
+    SLICE_X6Y88          LUT5 (Prop_lut5_I0_O)        0.148     1.235 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__4/O
+                         net (fo=9, routed)           0.762     1.997    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
+    SLICE_X4Y87          LUT5 (Prop_lut5_I4_O)        0.328     2.325 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__3/O
+                         net (fo=5, routed)           0.970     3.294    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
+    SLICE_X4Y88          LUT6 (Prop_lut6_I1_O)        0.124     3.418 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__4/O
+                         net (fo=4, routed)           0.590     4.009    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/rst_aux
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -406,18 +406,282 @@ Slack (MET) :             34.963ns  (required time - arrival time)
                                                      -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.500    38.548    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/clk_i
-    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
-                         clock pessimism              0.577    39.125    
-                         clock uncertainty           -0.098    39.027    
-    SLICE_X4Y87          FDRE (Setup_fdre_C_R)       -0.429    38.598    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg
+                         net (fo=85, routed)          1.501    38.549    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/clk_i
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
+                         clock pessimism              0.577    39.126    
+                         clock uncertainty           -0.098    39.028    
+    SLICE_X4Y88          FDRE (Setup_fdre_C_R)       -0.429    38.599    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                         38.598    
-                         arrival time                          -3.635    
+                         required time                         38.599    
+                         arrival time                          -4.009    
   -------------------------------------------------------------------
-                         slack                                 34.963    
+                         slack                                 34.591    
 
-Slack (MET) :             35.109ns  (required time - arrival time)
+Slack (MET) :             34.595ns  (required time - arrival time)
+  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_o_clk_generator
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
+  Data Path Delay:        4.580ns  (logic 0.828ns (18.079%)  route 3.752ns (81.921%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.299ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.452ns = ( 38.548 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.661ns
+    Clock Pessimism Removal (CPR):    0.493ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.806    -0.661    inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/clk_i
+    SLICE_X7Y106         FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y106         FDRE (Prop_fdre_C_Q)         0.456    -0.205 r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/Q
+                         net (fo=11, routed)          1.124     0.920    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_3[1]
+    SLICE_X6Y93          LUT5 (Prop_lut5_I2_O)        0.124     1.044 f  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_2__8/O
+                         net (fo=6, routed)           0.862     1.906    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_1
+    SLICE_X6Y93          LUT6 (Prop_lut6_I0_O)        0.124     2.030 r  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_3/O
+                         net (fo=8, routed)           1.050     3.080    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg_2
+    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     3.204 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__5/O
+                         net (fo=4, routed)           0.716     3.919    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/rst_aux
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_o_clk_generator rise edge)
+                                                     40.000    40.000 r  
+    E3                                                0.000    40.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.500    38.548    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         clock pessimism              0.493    39.041    
+                         clock uncertainty           -0.098    38.943    
+    SLICE_X4Y87          FDRE (Setup_fdre_C_R)       -0.429    38.514    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg
+  -------------------------------------------------------------------
+                         required time                         38.514    
+                         arrival time                          -3.919    
+  -------------------------------------------------------------------
+                         slack                                 34.595    
+
+Slack (MET) :             34.595ns  (required time - arrival time)
+  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_o_clk_generator
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
+  Data Path Delay:        4.580ns  (logic 0.828ns (18.079%)  route 3.752ns (81.921%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.299ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.452ns = ( 38.548 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.661ns
+    Clock Pessimism Removal (CPR):    0.493ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.806    -0.661    inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/clk_i
+    SLICE_X7Y106         FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y106         FDRE (Prop_fdre_C_Q)         0.456    -0.205 r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/Q
+                         net (fo=11, routed)          1.124     0.920    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_3[1]
+    SLICE_X6Y93          LUT5 (Prop_lut5_I2_O)        0.124     1.044 f  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_2__8/O
+                         net (fo=6, routed)           0.862     1.906    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_1
+    SLICE_X6Y93          LUT6 (Prop_lut6_I0_O)        0.124     2.030 r  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_3/O
+                         net (fo=8, routed)           1.050     3.080    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg_2
+    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     3.204 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__5/O
+                         net (fo=4, routed)           0.716     3.919    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[1].ffdx/rst_aux
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_o_clk_generator rise edge)
+                                                     40.000    40.000 r  
+    E3                                                0.000    40.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.500    38.548    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
+                         clock pessimism              0.493    39.041    
+                         clock uncertainty           -0.098    38.943    
+    SLICE_X4Y87          FDRE (Setup_fdre_C_R)       -0.429    38.514    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg
+  -------------------------------------------------------------------
+                         required time                         38.514    
+                         arrival time                          -3.919    
+  -------------------------------------------------------------------
+                         slack                                 34.595    
+
+Slack (MET) :             34.595ns  (required time - arrival time)
+  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/R
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_o_clk_generator
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
+  Data Path Delay:        4.580ns  (logic 0.828ns (18.079%)  route 3.752ns (81.921%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.299ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.452ns = ( 38.548 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.661ns
+    Clock Pessimism Removal (CPR):    0.493ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.806    -0.661    inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/clk_i
+    SLICE_X7Y106         FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y106         FDRE (Prop_fdre_C_Q)         0.456    -0.205 r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/Q
+                         net (fo=11, routed)          1.124     0.920    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_3[1]
+    SLICE_X6Y93          LUT5 (Prop_lut5_I2_O)        0.124     1.044 f  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_2__8/O
+                         net (fo=6, routed)           0.862     1.906    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_1
+    SLICE_X6Y93          LUT6 (Prop_lut6_I0_O)        0.124     2.030 r  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_3/O
+                         net (fo=8, routed)           1.050     3.080    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg_2
+    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     3.204 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__5/O
+                         net (fo=4, routed)           0.716     3.919    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/rst_aux
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_o_clk_generator rise edge)
+                                                     40.000    40.000 r  
+    E3                                                0.000    40.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.500    38.548    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/clk_i
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
+                         clock pessimism              0.493    39.041    
+                         clock uncertainty           -0.098    38.943    
+    SLICE_X4Y87          FDRE (Setup_fdre_C_R)       -0.429    38.514    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg
+  -------------------------------------------------------------------
+                         required time                         38.514    
+                         arrival time                          -3.919    
+  -------------------------------------------------------------------
+                         slack                                 34.595    
+
+Slack (MET) :             34.595ns  (required time - arrival time)
+  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/R
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_o_clk_generator
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
+  Data Path Delay:        4.580ns  (logic 0.828ns (18.079%)  route 3.752ns (81.921%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.299ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.452ns = ( 38.548 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.661ns
+    Clock Pessimism Removal (CPR):    0.493ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.182ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.806    -0.661    inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/clk_i
+    SLICE_X7Y106         FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y106         FDRE (Prop_fdre_C_Q)         0.456    -0.205 r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/Q
+                         net (fo=11, routed)          1.124     0.920    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_3[1]
+    SLICE_X6Y93          LUT5 (Prop_lut5_I2_O)        0.124     1.044 f  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_2__8/O
+                         net (fo=6, routed)           0.862     1.906    inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg_1
+    SLICE_X6Y93          LUT6 (Prop_lut6_I0_O)        0.124     2.030 r  inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_i_3/O
+                         net (fo=8, routed)           1.050     3.080    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg_2
+    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     3.204 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__5/O
+                         net (fo=4, routed)           0.716     3.919    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[3].ffdx/rst_aux
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_o_clk_generator rise edge)
+                                                     40.000    40.000 r  
+    E3                                                0.000    40.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          1.500    38.548    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[3].ffdx/clk_i
+    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
+                         clock pessimism              0.493    39.041    
+                         clock uncertainty           -0.098    38.943    
+    SLICE_X4Y87          FDRE (Setup_fdre_C_R)       -0.429    38.514    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg
+  -------------------------------------------------------------------
+                         required time                         38.514    
+                         arrival time                          -3.919    
+  -------------------------------------------------------------------
+                         slack                                 34.595    
+
+Slack (MET) :             34.595ns  (required time - arrival time)
   Source:                 inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Destination:            inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
@@ -425,12 +689,12 @@ Slack (MET) :             35.109ns  (required time - arrival time)
   Path Group:             clk_o_clk_generator
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.328ns  (logic 1.118ns (25.833%)  route 3.210ns (74.167%))
+  Data Path Delay:        4.853ns  (logic 1.118ns (23.036%)  route 3.735ns (76.964%))
   Logic Levels:           3  (LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    -1.451ns = ( 38.549 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.850ns
-    Clock Pessimism Removal (CPR):    0.564ns
+    Source Clock Delay      (SCD):    -0.849ns
+    Clock Pessimism Removal (CPR):    0.577ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.182ns
@@ -448,84 +712,18 @@ Slack (MET) :             35.109ns  (required time - arrival time)
                                                      -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.617    -0.850    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X6Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          1.618    -0.849    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X6Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y87          FDRE (Prop_fdre_C_Q)         0.518    -0.332 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.256     0.924    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
-    SLICE_X6Y87          LUT5 (Prop_lut5_I0_O)        0.148     1.072 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__2/O
-                         net (fo=7, routed)           0.762     1.834    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
-    SLICE_X4Y86          LUT5 (Prop_lut5_I4_O)        0.328     2.162 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__1/O
-                         net (fo=5, routed)           0.463     2.624    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
-    SLICE_X4Y87          LUT6 (Prop_lut6_I0_O)        0.124     2.748 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__1/O
-                         net (fo=4, routed)           0.729     3.478    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/rst_aux
-    SLICE_X3Y86          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_o_clk_generator rise edge)
-                                                     40.000    40.000 r  
-    E3                                                0.000    40.000 r  clk_i (IN)
-                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.501    38.549    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X3Y86          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
-                         clock pessimism              0.564    39.113    
-                         clock uncertainty           -0.098    39.015    
-    SLICE_X3Y86          FDRE (Setup_fdre_C_R)       -0.429    38.586    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg
-  -------------------------------------------------------------------
-                         required time                         38.586    
-                         arrival time                          -3.478    
-  -------------------------------------------------------------------
-                         slack                                 35.109    
-
-Slack (MET) :             35.258ns  (required time - arrival time)
-  Source:                 inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/R
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_o_clk_generator
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.216ns  (logic 0.828ns (19.641%)  route 3.388ns (80.359%))
-  Logic Levels:           3  (LUT2=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.449ns = ( 38.551 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.846ns
-    Clock Pessimism Removal (CPR):    0.603ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.621    -0.846    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/clk_i
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y88          FDRE (Prop_fdre_C_Q)         0.456    -0.390 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.171     0.781    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg_0
-    SLICE_X0Y88          LUT5 (Prop_lut5_I0_O)        0.124     0.905 f  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_i_3__1/O
-                         net (fo=5, routed)           0.813     1.718    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_reg_3
-    SLICE_X0Y89          LUT6 (Prop_lut6_I5_O)        0.124     1.842 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_i_2__6/O
-                         net (fo=11, routed)          0.302     2.145    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/maxEna
-    SLICE_X0Y90          LUT2 (Prop_lut2_I0_O)        0.124     2.269 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_i_1__32/O
-                         net (fo=10, routed)          1.101     3.370    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/rst_aux
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/R
+    SLICE_X6Y88          FDRE (Prop_fdre_C_Q)         0.518    -0.331 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=6, routed)           1.418     1.087    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
+    SLICE_X6Y88          LUT5 (Prop_lut5_I0_O)        0.148     1.235 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__4/O
+                         net (fo=9, routed)           0.762     1.997    inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
+    SLICE_X4Y87          LUT5 (Prop_lut5_I4_O)        0.328     2.325 r  inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__3/O
+                         net (fo=5, routed)           0.970     3.294    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/p_1_in
+    SLICE_X4Y88          LUT6 (Prop_lut6_I1_O)        0.124     3.418 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__4/O
+                         net (fo=4, routed)           0.586     4.004    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/rst_aux
+    SLICE_X5Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -538,163 +736,31 @@ Slack (MET) :             35.258ns  (required time - arrival time)
                                                      -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.503    38.551    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/clk_i
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-                         clock pessimism              0.603    39.154    
-                         clock uncertainty           -0.098    39.056    
-    SLICE_X0Y88          FDRE (Setup_fdre_C_R)       -0.429    38.627    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg
+                         net (fo=85, routed)          1.501    38.549    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X5Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         clock pessimism              0.577    39.126    
+                         clock uncertainty           -0.098    39.028    
+    SLICE_X5Y88          FDRE (Setup_fdre_C_R)       -0.429    38.599    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                         38.627    
-                         arrival time                          -3.370    
+                         required time                         38.599    
+                         arrival time                          -4.004    
   -------------------------------------------------------------------
-                         slack                                 35.258    
+                         slack                                 34.595    
 
-Slack (MET) :             35.258ns  (required time - arrival time)
-  Source:                 inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg/R
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_o_clk_generator
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.216ns  (logic 0.828ns (19.641%)  route 3.388ns (80.359%))
-  Logic Levels:           3  (LUT2=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.449ns = ( 38.551 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.846ns
-    Clock Pessimism Removal (CPR):    0.603ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.621    -0.846    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/clk_i
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y88          FDRE (Prop_fdre_C_Q)         0.456    -0.390 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.171     0.781    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg_0
-    SLICE_X0Y88          LUT5 (Prop_lut5_I0_O)        0.124     0.905 f  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_i_3__1/O
-                         net (fo=5, routed)           0.813     1.718    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_reg_3
-    SLICE_X0Y89          LUT6 (Prop_lut6_I5_O)        0.124     1.842 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_i_2__6/O
-                         net (fo=11, routed)          0.302     2.145    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/maxEna
-    SLICE_X0Y90          LUT2 (Prop_lut2_I0_O)        0.124     2.269 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_i_1__32/O
-                         net (fo=10, routed)          1.101     3.370    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/rst_aux
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_o_clk_generator rise edge)
-                                                     40.000    40.000 r  
-    E3                                                0.000    40.000 r  clk_i (IN)
-                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.503    38.551    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/clk_i
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg/C
-                         clock pessimism              0.603    39.154    
-                         clock uncertainty           -0.098    39.056    
-    SLICE_X0Y88          FDRE (Setup_fdre_C_R)       -0.429    38.627    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg
-  -------------------------------------------------------------------
-                         required time                         38.627    
-                         arrival time                          -3.370    
-  -------------------------------------------------------------------
-                         slack                                 35.258    
-
-Slack (MET) :             35.258ns  (required time - arrival time)
-  Source:                 inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/R
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_o_clk_generator
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.216ns  (logic 0.828ns (19.641%)  route 3.388ns (80.359%))
-  Logic Levels:           3  (LUT2=1 LUT5=1 LUT6=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.449ns = ( 38.551 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.846ns
-    Clock Pessimism Removal (CPR):    0.603ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.621    -0.846    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/clk_i
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y88          FDRE (Prop_fdre_C_Q)         0.456    -0.390 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.171     0.781    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg_0
-    SLICE_X0Y88          LUT5 (Prop_lut5_I0_O)        0.124     0.905 f  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_i_3__1/O
-                         net (fo=5, routed)           0.813     1.718    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_reg_3
-    SLICE_X0Y89          LUT6 (Prop_lut6_I5_O)        0.124     1.842 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_i_2__6/O
-                         net (fo=11, routed)          0.302     2.145    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/maxEna
-    SLICE_X0Y90          LUT2 (Prop_lut2_I0_O)        0.124     2.269 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[8].ffdx/Q_o_i_1__32/O
-                         net (fo=10, routed)          1.101     3.370    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/rst_aux
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_o_clk_generator rise edge)
-                                                     40.000    40.000 r  
-    E3                                                0.000    40.000 r  clk_i (IN)
-                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.503    38.551    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/clk_i
-    SLICE_X0Y88          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/C
-                         clock pessimism              0.603    39.154    
-                         clock uncertainty           -0.098    39.056    
-    SLICE_X0Y88          FDRE (Setup_fdre_C_R)       -0.429    38.627    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg
-  -------------------------------------------------------------------
-                         required time                         38.627    
-                         arrival time                          -3.370    
-  -------------------------------------------------------------------
-                         slack                                 35.258    
-
-Slack (MET) :             35.319ns  (required time - arrival time)
+Slack (MET) :             34.846ns  (required time - arrival time)
   Source:                 inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.119ns  (logic 1.118ns (27.143%)  route 3.001ns (72.857%))
+  Data Path Delay:        4.603ns  (logic 1.118ns (24.287%)  route 3.485ns (75.713%))
   Logic Levels:           3  (LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.035ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.449ns = ( 38.551 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.850ns
-    Clock Pessimism Removal (CPR):    0.564ns
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.450ns = ( 38.550 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.849ns
+    Clock Pessimism Removal (CPR):    0.577ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.182ns
@@ -712,18 +778,18 @@ Slack (MET) :             35.319ns  (required time - arrival time)
                                                      -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.617    -0.850    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X6Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          1.618    -0.849    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X6Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y87          FDRE (Prop_fdre_C_Q)         0.518    -0.332 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.256     0.924    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
-    SLICE_X6Y87          LUT5 (Prop_lut5_I0_O)        0.148     1.072 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__2/O
-                         net (fo=7, routed)           0.326     1.398    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
-    SLICE_X4Y87          LUT6 (Prop_lut6_I4_O)        0.328     1.726 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__0/O
-                         net (fo=7, routed)           0.883     2.609    inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[3].ffdx/p_2_in
-    SLICE_X4Y88          LUT5 (Prop_lut5_I3_O)        0.124     2.733 r  inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_i_1__2/O
-                         net (fo=4, routed)           0.536     3.269    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/rst_aux
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
+    SLICE_X6Y88          FDRE (Prop_fdre_C_Q)         0.518    -0.331 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=6, routed)           1.418     1.087    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
+    SLICE_X6Y88          LUT5 (Prop_lut5_I0_O)        0.148     1.235 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__4/O
+                         net (fo=9, routed)           0.755     1.990    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/p_0_in
+    SLICE_X4Y89          LUT5 (Prop_lut5_I2_O)        0.328     2.318 r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_2__0/O
+                         net (fo=7, routed)           0.679     2.997    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/p_4_in
+    SLICE_X5Y89          LUT6 (Prop_lut6_I0_O)        0.124     3.121 r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__0/O
+                         net (fo=4, routed)           0.634     3.754    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/rst_aux_0
+    SLICE_X4Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -736,31 +802,31 @@ Slack (MET) :             35.319ns  (required time - arrival time)
                                                      -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.503    38.551    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
-                         clock pessimism              0.564    39.115    
-                         clock uncertainty           -0.098    39.017    
-    SLICE_X3Y88          FDRE (Setup_fdre_C_R)       -0.429    38.588    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg
+                         net (fo=85, routed)          1.502    38.550    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X4Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         clock pessimism              0.577    39.127    
+                         clock uncertainty           -0.098    39.029    
+    SLICE_X4Y89          FDRE (Setup_fdre_C_R)       -0.429    38.600    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                         38.588    
-                         arrival time                          -3.269    
+                         required time                         38.600    
+                         arrival time                          -3.754    
   -------------------------------------------------------------------
-                         slack                                 35.319    
+                         slack                                 34.846    
 
-Slack (MET) :             35.319ns  (required time - arrival time)
+Slack (MET) :             34.851ns  (required time - arrival time)
   Source:                 inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.119ns  (logic 1.118ns (27.143%)  route 3.001ns (72.857%))
+  Data Path Delay:        4.599ns  (logic 1.118ns (24.310%)  route 3.481ns (75.690%))
   Logic Levels:           3  (LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.035ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.449ns = ( 38.551 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.850ns
-    Clock Pessimism Removal (CPR):    0.564ns
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.450ns = ( 38.550 - 40.000 ) 
+    Source Clock Delay      (SCD):    -0.849ns
+    Clock Pessimism Removal (CPR):    0.577ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.182ns
@@ -778,84 +844,18 @@ Slack (MET) :             35.319ns  (required time - arrival time)
                                                      -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.617    -0.850    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X6Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          1.618    -0.849    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X6Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y87          FDRE (Prop_fdre_C_Q)         0.518    -0.332 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.256     0.924    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
-    SLICE_X6Y87          LUT5 (Prop_lut5_I0_O)        0.148     1.072 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__2/O
-                         net (fo=7, routed)           0.326     1.398    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
-    SLICE_X4Y87          LUT6 (Prop_lut6_I4_O)        0.328     1.726 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__0/O
-                         net (fo=7, routed)           0.883     2.609    inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[3].ffdx/p_2_in
-    SLICE_X4Y88          LUT5 (Prop_lut5_I3_O)        0.124     2.733 r  inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_i_1__2/O
-                         net (fo=4, routed)           0.536     3.269    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/rst_aux
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_o_clk_generator rise edge)
-                                                     40.000    40.000 r  
-    E3                                                0.000    40.000 r  clk_i (IN)
-                         net (fo=0)                   0.000    40.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.418    41.418 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162    42.580    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.503    38.551    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
-                         clock pessimism              0.564    39.115    
-                         clock uncertainty           -0.098    39.017    
-    SLICE_X3Y88          FDRE (Setup_fdre_C_R)       -0.429    38.588    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg
-  -------------------------------------------------------------------
-                         required time                         38.588    
-                         arrival time                          -3.269    
-  -------------------------------------------------------------------
-                         slack                                 35.319    
-
-Slack (MET) :             35.319ns  (required time - arrival time)
-  Source:                 inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/R
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_o_clk_generator
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            40.000ns  (clk_o_clk_generator rise@40.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        4.119ns  (logic 1.118ns (27.143%)  route 3.001ns (72.857%))
-  Logic Levels:           3  (LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.035ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.449ns = ( 38.551 - 40.000 ) 
-    Source Clock Delay      (SCD):    -0.850ns
-    Clock Pessimism Removal (CPR):    0.564ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.182ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         1.489     1.489 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.233     2.722    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -6.946    -4.224 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.661    -2.563    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.467 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.617    -0.850    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X6Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X6Y87          FDRE (Prop_fdre_C_Q)         0.518    -0.332 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           1.256     0.924    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
-    SLICE_X6Y87          LUT5 (Prop_lut5_I0_O)        0.148     1.072 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__2/O
-                         net (fo=7, routed)           0.326     1.398    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/p_0_in
-    SLICE_X4Y87          LUT6 (Prop_lut6_I4_O)        0.328     1.726 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__0/O
-                         net (fo=7, routed)           0.883     2.609    inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[3].ffdx/p_2_in
-    SLICE_X4Y88          LUT5 (Prop_lut5_I3_O)        0.124     2.733 r  inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_i_1__2/O
-                         net (fo=4, routed)           0.536     3.269    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/rst_aux
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/R
+    SLICE_X6Y88          FDRE (Prop_fdre_C_Q)         0.518    -0.331 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=6, routed)           1.418     1.087    inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/enchufe4[0]_0[0]
+    SLICE_X6Y88          LUT5 (Prop_lut5_I0_O)        0.148     1.235 r  inst_voltimetro/contUnos/cOnes_gen[0].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_i_2__4/O
+                         net (fo=9, routed)           0.755     1.990    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/p_0_in
+    SLICE_X4Y89          LUT5 (Prop_lut5_I2_O)        0.328     2.318 r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_2__0/O
+                         net (fo=7, routed)           0.679     2.997    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/p_4_in
+    SLICE_X5Y89          LUT6 (Prop_lut6_I0_O)        0.124     3.121 r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__0/O
+                         net (fo=4, routed)           0.629     3.750    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/rst_aux_0
+    SLICE_X5Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -868,16 +868,16 @@ Slack (MET) :             35.319ns  (required time - arrival time)
                                                      -7.204    35.376 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.581    36.957    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    37.048 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          1.503    38.551    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/clk_i
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
-                         clock pessimism              0.564    39.115    
-                         clock uncertainty           -0.098    39.017    
-    SLICE_X3Y88          FDRE (Setup_fdre_C_R)       -0.429    38.588    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg
+                         net (fo=85, routed)          1.502    38.550    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
+    SLICE_X5Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
+                         clock pessimism              0.577    39.127    
+                         clock uncertainty           -0.098    39.029    
+    SLICE_X5Y89          FDRE (Setup_fdre_C_R)       -0.429    38.600    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                         38.588    
-                         arrival time                          -3.269    
+                         required time                         38.600    
+                         arrival time                          -3.750    
   -------------------------------------------------------------------
-                         slack                                 35.319    
+                         slack                                 34.851    
 
 
 
@@ -885,19 +885,19 @@ Slack (MET) :             35.319ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.194ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
+Slack (MET) :             0.171ns  (arrival time - required time)
+  Source:                 inst_voltimetro/contUnos/cOnes_gen[6].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/reg_gen[2].regNx/ffd_gen[1].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/reg_gen[6].regNx/ffd_gen[3].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.284ns  (logic 0.141ns (49.615%)  route 0.143ns (50.385%))
+  Data Path Delay:        0.281ns  (logic 0.141ns (50.089%)  route 0.140ns (49.911%))
   Logic Levels:           0  
-  Clock Path Skew:        0.038ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.797ns
-    Source Clock Delay      (SCD):    -0.561ns
+  Clock Path Skew:        0.039ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.794ns
+    Source Clock Delay      (SCD):    -0.559ns
     Clock Pessimism Removal (CPR):    -0.274ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -912,12 +912,12 @@ Slack (MET) :             0.194ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.586    -0.561    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
-    SLICE_X4Y87          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.588    -0.559    inst_voltimetro/contUnos/cOnes_gen[6].BCD_counterN/reg0/ffd_gen[3].ffdx/clk_i
+    SLICE_X4Y90          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[6].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X4Y87          FDRE (Prop_fdre_C_Q)         0.141    -0.420 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           0.143    -0.277    inst_voltimetro/reg_gen[2].regNx/ffd_gen[1].ffdx/enchufe4[2]_2[0]
-    SLICE_X2Y87          FDRE                                         r  inst_voltimetro/reg_gen[2].regNx/ffd_gen[1].ffdx/Q_o_reg/D
+    SLICE_X4Y90          FDRE (Prop_fdre_C_Q)         0.141    -0.418 r  inst_voltimetro/contUnos/cOnes_gen[6].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/Q
+                         net (fo=3, routed)           0.140    -0.278    inst_voltimetro/reg_gen[6].regNx/ffd_gen[3].ffdx/enchufe4[6]_6[0]
+    SLICE_X3Y90          FDRE                                         r  inst_voltimetro/reg_gen[6].regNx/ffd_gen[3].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -930,30 +930,30 @@ Slack (MET) :             0.194ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.858    -0.797    inst_voltimetro/reg_gen[2].regNx/ffd_gen[1].ffdx/clk_i
-    SLICE_X2Y87          FDRE                                         r  inst_voltimetro/reg_gen[2].regNx/ffd_gen[1].ffdx/Q_o_reg/C
-                         clock pessimism              0.274    -0.523    
-    SLICE_X2Y87          FDRE (Hold_fdre_C_D)         0.052    -0.471    inst_voltimetro/reg_gen[2].regNx/ffd_gen[1].ffdx/Q_o_reg
+                         net (fo=85, routed)          0.860    -0.794    inst_voltimetro/reg_gen[6].regNx/ffd_gen[3].ffdx/clk_i
+    SLICE_X3Y90          FDRE                                         r  inst_voltimetro/reg_gen[6].regNx/ffd_gen[3].ffdx/Q_o_reg/C
+                         clock pessimism              0.274    -0.520    
+    SLICE_X3Y90          FDRE (Hold_fdre_C_D)         0.071    -0.449    inst_voltimetro/reg_gen[6].regNx/ffd_gen[3].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.471    
-                         arrival time                          -0.277    
+                         required time                          0.449    
+                         arrival time                          -0.278    
   -------------------------------------------------------------------
-                         slack                                  0.194    
+                         slack                                  0.171    
 
-Slack (MET) :             0.204ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
+Slack (MET) :             0.172ns  (arrival time - required time)
+  Source:                 inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/reg_gen[4].regNx/ffd_gen[3].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.273ns  (logic 0.141ns (51.608%)  route 0.132ns (48.392%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.795ns
-    Source Clock Delay      (SCD):    -0.558ns
-    Clock Pessimism Removal (CPR):    -0.253ns
+  Data Path Delay:        0.277ns  (logic 0.186ns (67.042%)  route 0.091ns (32.958%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.793ns
+    Source Clock Delay      (SCD):    -0.556ns
+    Clock Pessimism Removal (CPR):    -0.250ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -967,12 +967,14 @@ Slack (MET) :             0.204ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.589    -0.558    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[3].ffdx/clk_i
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.591    -0.556    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/clk_i
+    SLICE_X1Y93          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X3Y88          FDRE (Prop_fdre_C_Q)         0.141    -0.417 r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/Q
-                         net (fo=3, routed)           0.132    -0.285    inst_voltimetro/reg_gen[4].regNx/ffd_gen[3].ffdx/enchufe4[4]_4[0]
-    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[4].regNx/ffd_gen[3].ffdx/Q_o_reg/D
+    SLICE_X1Y93          FDRE (Prop_fdre_C_Q)         0.141    -0.415 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/Q
+                         net (fo=7, routed)           0.091    -0.324    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg_1
+    SLICE_X0Y93          LUT6 (Prop_lut6_I1_O)        0.045    -0.279 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_i_1__38/O
+                         net (fo=1, routed)           0.000    -0.279    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg_1[0]
+    SLICE_X0Y93          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -985,30 +987,30 @@ Slack (MET) :             0.204ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.860    -0.795    inst_voltimetro/reg_gen[4].regNx/ffd_gen[3].ffdx/clk_i
-    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[4].regNx/ffd_gen[3].ffdx/Q_o_reg/C
-                         clock pessimism              0.253    -0.542    
-    SLICE_X2Y89          FDRE (Hold_fdre_C_D)         0.053    -0.489    inst_voltimetro/reg_gen[4].regNx/ffd_gen[3].ffdx/Q_o_reg
+                         net (fo=85, routed)          0.861    -0.793    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/clk_i
+    SLICE_X0Y93          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+                         clock pessimism              0.250    -0.543    
+    SLICE_X0Y93          FDRE (Hold_fdre_C_D)         0.092    -0.451    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.489    
-                         arrival time                          -0.285    
+                         required time                          0.451    
+                         arrival time                          -0.279    
   -------------------------------------------------------------------
-                         slack                                  0.204    
+                         slack                                  0.172    
 
-Slack (MET) :             0.210ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+Slack (MET) :             0.179ns  (arrival time - required time)
+  Source:                 inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/reg_gen[4].regNx/ffd_gen[0].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/reg_gen[5].regNx/ffd_gen[3].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.286ns  (logic 0.141ns (49.282%)  route 0.145ns (50.718%))
+  Data Path Delay:        0.278ns  (logic 0.141ns (50.639%)  route 0.137ns (49.361%))
   Logic Levels:           0  
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+  Clock Path Skew:        0.039ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -0.795ns
-    Source Clock Delay      (SCD):    -0.558ns
-    Clock Pessimism Removal (CPR):    -0.253ns
+    Source Clock Delay      (SCD):    -0.560ns
+    Clock Pessimism Removal (CPR):    -0.274ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1022,12 +1024,12 @@ Slack (MET) :             0.210ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.589    -0.558    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.587    -0.560    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[3].ffdx/clk_i
+    SLICE_X5Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X3Y88          FDRE (Prop_fdre_C_Q)         0.141    -0.417 r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=6, routed)           0.145    -0.272    inst_voltimetro/reg_gen[4].regNx/ffd_gen[0].ffdx/enchufe4[4]_4[0]
-    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[4].regNx/ffd_gen[0].ffdx/Q_o_reg/D
+    SLICE_X5Y89          FDRE (Prop_fdre_C_Q)         0.141    -0.419 r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/Q
+                         net (fo=5, routed)           0.137    -0.282    inst_voltimetro/reg_gen[5].regNx/ffd_gen[3].ffdx/enchufe4[5]_5[0]
+    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[5].regNx/ffd_gen[3].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -1040,30 +1042,30 @@ Slack (MET) :             0.210ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.860    -0.795    inst_voltimetro/reg_gen[4].regNx/ffd_gen[0].ffdx/clk_i
-    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[4].regNx/ffd_gen[0].ffdx/Q_o_reg/C
-                         clock pessimism              0.253    -0.542    
-    SLICE_X2Y89          FDRE (Hold_fdre_C_D)         0.060    -0.482    inst_voltimetro/reg_gen[4].regNx/ffd_gen[0].ffdx/Q_o_reg
+                         net (fo=85, routed)          0.860    -0.795    inst_voltimetro/reg_gen[5].regNx/ffd_gen[3].ffdx/clk_i
+    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[5].regNx/ffd_gen[3].ffdx/Q_o_reg/C
+                         clock pessimism              0.274    -0.521    
+    SLICE_X2Y89          FDRE (Hold_fdre_C_D)         0.060    -0.461    inst_voltimetro/reg_gen[5].regNx/ffd_gen[3].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.482    
-                         arrival time                          -0.272    
+                         required time                          0.461    
+                         arrival time                          -0.282    
   -------------------------------------------------------------------
-                         slack                                  0.210    
+                         slack                                  0.179    
 
 Slack (MET) :             0.210ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/C
+  Source:                 inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contBin/reg1/ffd_gen[14].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.346ns  (logic 0.209ns (60.343%)  route 0.137ns (39.657%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+  Data Path Delay:        0.330ns  (logic 0.189ns (57.224%)  route 0.141ns (42.776%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -0.797ns
-    Source Clock Delay      (SCD):    -0.559ns
-    Clock Pessimism Removal (CPR):    -0.253ns
+    Source Clock Delay      (SCD):    -0.560ns
+    Clock Pessimism Removal (CPR):    -0.250ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1077,14 +1079,14 @@ Slack (MET) :             0.210ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.588    -0.559    inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/clk_i
-    SLICE_X6Y90          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.587    -0.560    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X5Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y90          FDRE (Prop_fdre_C_Q)         0.164    -0.395 r  inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/Q
-                         net (fo=4, routed)           0.137    -0.258    inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg_0[0]
-    SLICE_X6Y89          LUT4 (Prop_lut4_I0_O)        0.045    -0.213 r  inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_i_1__21/O
-                         net (fo=1, routed)           0.000    -0.213    inst_voltimetro/contBin/reg1/ffd_gen[14].ffdx/Dinc_aux[0]
-    SLICE_X6Y89          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[14].ffdx/Q_o_reg/D
+    SLICE_X5Y88          FDRE (Prop_fdre_C_Q)         0.141    -0.419 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=7, routed)           0.141    -0.278    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/enchufe4[2]_2[0]
+    SLICE_X4Y88          LUT3 (Prop_lut3_I1_O)        0.048    -0.230 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_i_1__59/O
+                         net (fo=1, routed)           0.000    -0.230    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg_1[0]
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -1097,30 +1099,30 @@ Slack (MET) :             0.210ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.858    -0.797    inst_voltimetro/contBin/reg1/ffd_gen[14].ffdx/clk_i
-    SLICE_X6Y89          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[14].ffdx/Q_o_reg/C
-                         clock pessimism              0.253    -0.544    
-    SLICE_X6Y89          FDRE (Hold_fdre_C_D)         0.121    -0.423    inst_voltimetro/contBin/reg1/ffd_gen[14].ffdx/Q_o_reg
+                         net (fo=85, routed)          0.858    -0.797    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/clk_i
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
+                         clock pessimism              0.250    -0.547    
+    SLICE_X4Y88          FDRE (Hold_fdre_C_D)         0.107    -0.440    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.423    
-                         arrival time                          -0.213    
+                         required time                          0.440    
+                         arrival time                          -0.230    
   -------------------------------------------------------------------
                          slack                                  0.210    
 
 Slack (MET) :             0.212ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg/C
+  Source:                 inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.349ns  (logic 0.186ns (53.347%)  route 0.163ns (46.653%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.796ns
-    Source Clock Delay      (SCD):    -0.559ns
-    Clock Pessimism Removal (CPR):    -0.253ns
+  Data Path Delay:        0.332ns  (logic 0.189ns (56.861%)  route 0.143ns (43.139%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.797ns
+    Source Clock Delay      (SCD):    -0.560ns
+    Clock Pessimism Removal (CPR):    -0.250ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1134,14 +1136,14 @@ Slack (MET) :             0.212ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.588    -0.559    inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/clk_i
-    SLICE_X5Y90          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.587    -0.560    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X4Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X5Y90          FDRE (Prop_fdre_C_Q)         0.141    -0.418 r  inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg/Q
-                         net (fo=7, routed)           0.163    -0.255    inst_voltimetro/contBin/reg1/ffd_gen[12].ffdx/Q_o_reg_2[1]
-    SLICE_X6Y90          LUT6 (Prop_lut6_I1_O)        0.045    -0.210 r  inst_voltimetro/contBin/reg1/ffd_gen[12].ffdx/Q_o_i_1__19/O
-                         net (fo=1, routed)           0.000    -0.210    inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg_1[0]
-    SLICE_X6Y90          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/D
+    SLICE_X4Y89          FDRE (Prop_fdre_C_Q)         0.141    -0.419 r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=8, routed)           0.143    -0.276    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg_2
+    SLICE_X5Y89          LUT3 (Prop_lut3_I1_O)        0.048    -0.228 r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_i_1__56/O
+                         net (fo=1, routed)           0.000    -0.228    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg_1[0]
+    SLICE_X5Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -1154,26 +1156,83 @@ Slack (MET) :             0.212ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.859    -0.796    inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/clk_i
-    SLICE_X6Y90          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/C
-                         clock pessimism              0.253    -0.543    
-    SLICE_X6Y90          FDRE (Hold_fdre_C_D)         0.121    -0.422    inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg
+                         net (fo=85, routed)          0.858    -0.797    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/clk_i
+    SLICE_X5Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
+                         clock pessimism              0.250    -0.547    
+    SLICE_X5Y89          FDRE (Hold_fdre_C_D)         0.107    -0.440    inst_voltimetro/contUnos/cOnes_gen[5].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.422    
-                         arrival time                          -0.210    
+                         required time                          0.440    
+                         arrival time                          -0.228    
   -------------------------------------------------------------------
                          slack                                  0.212    
 
-Slack (MET) :             0.213ns  (arrival time - required time)
-  Source:                 inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+Slack (MET) :             0.215ns  (arrival time - required time)
+  Source:                 inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.317ns  (logic 0.186ns (58.674%)  route 0.131ns (41.326%))
-  Logic Levels:           1  (LUT3=1)
+  Data Path Delay:        0.332ns  (logic 0.190ns (57.180%)  route 0.142ns (42.820%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.797ns
+    Source Clock Delay      (SCD):    -0.560ns
+    Clock Pessimism Removal (CPR):    -0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.697    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          0.587    -0.560    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X5Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y88          FDRE (Prop_fdre_C_Q)         0.141    -0.419 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=7, routed)           0.142    -0.277    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg_3[0]
+    SLICE_X4Y88          LUT4 (Prop_lut4_I2_O)        0.049    -0.228 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_i_1__11/O
+                         net (fo=1, routed)           0.000    -0.228    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Dinc_aux[0]
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.925    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          0.858    -0.797    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/clk_i
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg/C
+                         clock pessimism              0.250    -0.547    
+    SLICE_X4Y88          FDRE (Hold_fdre_C_D)         0.104    -0.443    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[3].ffdx/Q_o_reg
+  -------------------------------------------------------------------
+                         required time                          0.443    
+                         arrival time                          -0.228    
+  -------------------------------------------------------------------
+                         slack                                  0.215    
+
+Slack (MET) :             0.215ns  (arrival time - required time)
+  Source:                 inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            inst_voltimetro/reg_gen[3].regNx/ffd_gen[0].ffdx/Q_o_reg/D
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_o_clk_generator
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
+  Data Path Delay:        0.303ns  (logic 0.141ns (46.478%)  route 0.162ns (53.522%))
+  Logic Levels:           0  
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -0.795ns
     Source Clock Delay      (SCD):    -0.558ns
@@ -1191,14 +1250,12 @@ Slack (MET) :             0.213ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.589    -0.558    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/clk_i
-    SLICE_X1Y89          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.589    -0.558    inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X3Y89          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y89          FDRE (Prop_fdre_C_Q)         0.141    -0.417 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/Q
-                         net (fo=9, routed)           0.131    -0.286    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[1].ffdx/Q_o_reg_2
-    SLICE_X0Y89          LUT3 (Prop_lut3_I1_O)        0.045    -0.241 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[1].ffdx/Q_o_i_1__24/O
-                         net (fo=1, routed)           0.000    -0.241    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Dinc_aux[0]
-    SLICE_X0Y89          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/D
+    SLICE_X3Y89          FDRE (Prop_fdre_C_Q)         0.141    -0.417 r  inst_voltimetro/contUnos/cOnes_gen[3].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=8, routed)           0.162    -0.255    inst_voltimetro/reg_gen[3].regNx/ffd_gen[0].ffdx/enchufe4[3]_3[0]
+    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[3].regNx/ffd_gen[0].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -1211,86 +1268,29 @@ Slack (MET) :             0.213ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.860    -0.795    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/clk_i
-    SLICE_X0Y89          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.860    -0.795    inst_voltimetro/reg_gen[3].regNx/ffd_gen[0].ffdx/clk_i
+    SLICE_X2Y89          FDRE                                         r  inst_voltimetro/reg_gen[3].regNx/ffd_gen[0].ffdx/Q_o_reg/C
                          clock pessimism              0.250    -0.545    
-    SLICE_X0Y89          FDRE (Hold_fdre_C_D)         0.091    -0.454    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg
+    SLICE_X2Y89          FDRE (Hold_fdre_C_D)         0.075    -0.470    inst_voltimetro/reg_gen[3].regNx/ffd_gen[0].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.454    
-                         arrival time                          -0.241    
+                         required time                          0.470    
+                         arrival time                          -0.255    
   -------------------------------------------------------------------
-                         slack                                  0.213    
+                         slack                                  0.215    
 
-Slack (MET) :             0.213ns  (arrival time - required time)
-  Source:                 inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[1].ffdx/Q_o_reg/C
+Slack (MET) :             0.219ns  (arrival time - required time)
+  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[2].ffdx/Q_o_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_o_clk_generator
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.318ns  (logic 0.186ns (58.467%)  route 0.132ns (41.533%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.797ns
-    Source Clock Delay      (SCD):    -0.559ns
-    Clock Pessimism Removal (CPR):    -0.251ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.697    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.588    -0.559    inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[1].ffdx/clk_i
-    SLICE_X0Y87          FDRE                                         r  inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[1].ffdx/Q_o_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y87          FDRE (Prop_fdre_C_Q)         0.141    -0.418 r  inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[1].ffdx/Q_o_reg/Q
-                         net (fo=9, routed)           0.132    -0.286    inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[1].ffdx/Q_o_reg_0
-    SLICE_X1Y87          LUT3 (Prop_lut3_I0_O)        0.045    -0.241 r  inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[1].ffdx/Q_o_i_1__36/O
-                         net (fo=1, routed)           0.000    -0.241    inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[2].ffdx/Dinc_aux[0]
-    SLICE_X1Y87          FDRE                                         r  inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[2].ffdx/Q_o_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.925    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.858    -0.797    inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[2].ffdx/clk_i
-    SLICE_X1Y87          FDRE                                         r  inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[2].ffdx/Q_o_reg/C
-                         clock pessimism              0.251    -0.546    
-    SLICE_X1Y87          FDRE (Hold_fdre_C_D)         0.092    -0.454    inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[2].ffdx/Q_o_reg
-  -------------------------------------------------------------------
-                         required time                          0.454    
-                         arrival time                          -0.241    
-  -------------------------------------------------------------------
-                         slack                                  0.213    
-
-Slack (MET) :             0.213ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contBin/reg1/ffd_gen[15].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.348ns  (logic 0.209ns (59.997%)  route 0.139ns (40.003%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.797ns
-    Source Clock Delay      (SCD):    -0.559ns
+  Data Path Delay:        0.326ns  (logic 0.186ns (57.014%)  route 0.140ns (42.986%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.795ns
+    Source Clock Delay      (SCD):    -0.558ns
     Clock Pessimism Removal (CPR):    -0.253ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1305,71 +1305,14 @@ Slack (MET) :             0.213ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.588    -0.559    inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/clk_i
-    SLICE_X6Y90          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.589    -0.558    inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/clk_i
+    SLICE_X7Y93          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y90          FDRE (Prop_fdre_C_Q)         0.164    -0.395 r  inst_voltimetro/contBin/reg1/ffd_gen[13].ffdx/Q_o_reg/Q
-                         net (fo=4, routed)           0.139    -0.256    inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg_3[4]
-    SLICE_X6Y89          LUT5 (Prop_lut5_I3_O)        0.045    -0.211 r  inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_i_1__20/O
-                         net (fo=1, routed)           0.000    -0.211    inst_voltimetro/contBin/reg1/ffd_gen[15].ffdx/Q_o_reg_0[0]
-    SLICE_X6Y89          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[15].ffdx/Q_o_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.925    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.858    -0.797    inst_voltimetro/contBin/reg1/ffd_gen[15].ffdx/clk_i
-    SLICE_X6Y89          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[15].ffdx/Q_o_reg/C
-                         clock pessimism              0.253    -0.544    
-    SLICE_X6Y89          FDRE (Hold_fdre_C_D)         0.120    -0.424    inst_voltimetro/contBin/reg1/ffd_gen[15].ffdx/Q_o_reg
-  -------------------------------------------------------------------
-                         required time                          0.424    
-                         arrival time                          -0.211    
-  -------------------------------------------------------------------
-                         slack                                  0.213    
-
-Slack (MET) :             0.218ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Path Group:             clk_o_clk_generator
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.310ns  (logic 0.227ns (73.136%)  route 0.083ns (26.864%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.795ns
-    Source Clock Delay      (SCD):    -0.558ns
-    Clock Pessimism Removal (CPR):    -0.237ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_o_clk_generator rise edge)
-                                                      0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk_i (IN)
-                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
-    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk25MHz_gen/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.697    clk25MHz_gen/inst/clk_i_clk_generator
-    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.589    -0.558    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X3Y88          FDRE (Prop_fdre_C_Q)         0.128    -0.430 r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/Q
-                         net (fo=5, routed)           0.083    -0.347    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg_0
-    SLICE_X3Y88          LUT3 (Prop_lut3_I0_O)        0.099    -0.248 r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_i_1__50/O
-                         net (fo=1, routed)           0.000    -0.248    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Dinc_aux[0]
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/D
+    SLICE_X7Y93          FDRE (Prop_fdre_C_Q)         0.141    -0.417 r  inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg/Q
+                         net (fo=9, routed)           0.140    -0.277    inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg_0[0]
+    SLICE_X5Y93          LUT6 (Prop_lut6_I0_O)        0.045    -0.232 r  inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_i_1__21/O
+                         net (fo=1, routed)           0.000    -0.232    inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Dinc_aux[0]
+    SLICE_X5Y93          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -1382,30 +1325,30 @@ Slack (MET) :             0.218ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.860    -0.795    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/clk_i
-    SLICE_X3Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
-                         clock pessimism              0.237    -0.558    
-    SLICE_X3Y88          FDRE (Hold_fdre_C_D)         0.092    -0.466    inst_voltimetro/contUnos/cOnes_gen[4].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg
+                         net (fo=85, routed)          0.860    -0.795    inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/clk_i
+    SLICE_X5Y93          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg/C
+                         clock pessimism              0.253    -0.542    
+    SLICE_X5Y93          FDRE (Hold_fdre_C_D)         0.091    -0.451    inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.466    
-                         arrival time                          -0.248    
+                         required time                          0.451    
+                         arrival time                          -0.232    
   -------------------------------------------------------------------
-                         slack                                  0.218    
+                         slack                                  0.219    
 
-Slack (MET) :             0.220ns  (arrival time - required time)
-  Source:                 inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+Slack (MET) :             0.223ns  (arrival time - required time)
+  Source:                 inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
-  Destination:            inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg/D
+  Destination:            inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/D
                             (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
   Path Group:             clk_o_clk_generator
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.186ns (53.597%)  route 0.161ns (46.403%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
+  Data Path Delay:        0.327ns  (logic 0.186ns (56.832%)  route 0.141ns (43.168%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -0.797ns
-    Source Clock Delay      (SCD):    -0.558ns
-    Clock Pessimism Removal (CPR):    -0.274ns
+    Source Clock Delay      (SCD):    -0.560ns
+    Clock Pessimism Removal (CPR):    -0.250ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1419,14 +1362,14 @@ Slack (MET) :             0.220ns  (arrival time - required time)
                                                      -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.589    -0.558    inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/clk_i
-    SLICE_X3Y89          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+                         net (fo=85, routed)          0.587    -0.560    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/clk_i
+    SLICE_X5Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X3Y89          FDRE (Prop_fdre_C_Q)         0.141    -0.417 r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_reg/Q
-                         net (fo=7, routed)           0.161    -0.256    inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Qreg_aux[0]
-    SLICE_X4Y88          LUT5 (Prop_lut5_I0_O)        0.045    -0.211 r  inst_voltimetro/contBin/reg1/ffd_gen[5].ffdx/Q_o_i_1__13/O
-                         net (fo=1, routed)           0.000    -0.211    inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg_1[0]
-    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg/D
+    SLICE_X5Y88          FDRE (Prop_fdre_C_Q)         0.141    -0.419 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=7, routed)           0.141    -0.278    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/enchufe4[2]_2[0]
+    SLICE_X4Y88          LUT2 (Prop_lut2_I1_O)        0.045    -0.233 r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_i_1__10/O
+                         net (fo=1, routed)           0.000    -0.233    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Dinc_aux[1]
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_o_clk_generator rise edge)
@@ -1439,15 +1382,72 @@ Slack (MET) :             0.220ns  (arrival time - required time)
                                                      -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
-                         net (fo=71, routed)          0.858    -0.797    inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/clk_i
-    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg/C
-                         clock pessimism              0.274    -0.523    
-    SLICE_X4Y88          FDRE (Hold_fdre_C_D)         0.092    -0.431    inst_voltimetro/contBin/reg1/ffd_gen[7].ffdx/Q_o_reg
+                         net (fo=85, routed)          0.858    -0.797    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/clk_i
+    SLICE_X4Y88          FDRE                                         r  inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
+                         clock pessimism              0.250    -0.547    
+    SLICE_X4Y88          FDRE (Hold_fdre_C_D)         0.091    -0.456    inst_voltimetro/contUnos/cOnes_gen[2].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg
   -------------------------------------------------------------------
-                         required time                          0.431    
-                         arrival time                          -0.211    
+                         required time                          0.456    
+                         arrival time                          -0.233    
   -------------------------------------------------------------------
-                         slack                                  0.220    
+                         slack                                  0.223    
+
+Slack (MET) :             0.223ns  (arrival time - required time)
+  Source:                 inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/D
+                            (rising edge-triggered cell FDRE clocked by clk_o_clk_generator  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_o_clk_generator
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_o_clk_generator rise@0.000ns - clk_o_clk_generator rise@0.000ns)
+  Data Path Delay:        0.341ns  (logic 0.189ns (55.362%)  route 0.152ns (44.638%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.793ns
+    Source Clock Delay      (SCD):    -0.556ns
+    Clock Pessimism Removal (CPR):    -0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         0.257     0.257 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.697    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.356    -1.659 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.173    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026    -1.147 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          0.591    -0.556    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/clk_i
+    SLICE_X1Y93          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y93          FDRE (Prop_fdre_C_Q)         0.141    -0.415 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/Q
+                         net (fo=9, routed)           0.152    -0.263    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg_2
+    SLICE_X0Y93          LUT4 (Prop_lut4_I1_O)        0.048    -0.215 r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_i_1__35/O
+                         net (fo=1, routed)           0.000    -0.215    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg_2[0]
+    SLICE_X0Y93          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_o_clk_generator rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk25MHz_gen/inst/clk_i
+    E3                   IBUF (Prop_ibuf_I_O)         0.445     0.445 r  clk25MHz_gen/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.925    clk25MHz_gen/inst/clk_i_clk_generator
+    MMCME2_ADV_X1Y1      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.138    -2.213 r  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.684    clk25MHz_gen/inst/clk_o_clk_generator
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029    -1.655 r  clk25MHz_gen/inst/clkout1_buf/O
+                         net (fo=85, routed)          0.861    -0.793    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/clk_i
+    SLICE_X0Y93          FDRE                                         r  inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
+                         clock pessimism              0.250    -0.543    
+    SLICE_X0Y93          FDRE (Hold_fdre_C_D)         0.105    -0.438    inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg
+  -------------------------------------------------------------------
+                         required time                          0.438    
+                         arrival time                          -0.215    
+  -------------------------------------------------------------------
+                         slack                                  0.223    
 
 
 
@@ -1463,35 +1463,35 @@ Sources:            { clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0 }
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
 Min Period        n/a     BUFG/I              n/a            2.155         40.000      37.845     BUFGCTRL_X0Y16   clk25MHz_gen/inst/clkout1_buf/I
 Min Period        n/a     MMCME2_ADV/CLKOUT0  n/a            1.249         40.000      38.751     MMCME2_ADV_X1Y1  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X6Y85      inst_voltimetro/ADC/ffd0/Q_o_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X1Y89      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X1Y89      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[1].ffdx/Q_o_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y89      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y88      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y88      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y88      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/C
-Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X1Y90      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[6].ffdx/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X6Y87      inst_voltimetro/ADC/ffd0/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[1].ffdx/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/C
+Min Period        n/a     FDRE/C              n/a            1.000         40.000      39.000     SLICE_X0Y91      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[6].ffdx/Q_o_reg/C
 Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       40.000      173.360    MMCME2_ADV_X1Y1  clk25MHz_gen/inst/mmcm_adv_inst/CLKOUT0
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y87      inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[0].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y87      inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[1].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y87      inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[2].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y87      inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y87      inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[5].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y87      inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[6].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X4Y90      inst_voltimetro/contBin/reg1/ffd_gen[0].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X5Y90      inst_voltimetro/contBin/reg1/ffd_gen[10].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X6Y90      inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X6Y90      inst_voltimetro/contBin/reg1/ffd_gen[12].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X6Y85      inst_voltimetro/ADC/ffd0/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y89      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y89      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[1].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y89      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y88      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y88      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y88      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[5].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y90      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[6].ffdx/Q_o_reg/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y90      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[6].ffdx/Q_o_reg/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y89      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[7].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X6Y87      inst_voltimetro/ADC/ffd0/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y87      inst_voltimetro/Monitor4K/contV/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y87      inst_voltimetro/Monitor4K/ffdV/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X6Y92      inst_voltimetro/contBin/reg1/ffd_gen[11].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X6Y92      inst_voltimetro/contBin/reg1/ffd_gen[12].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X4Y92      inst_voltimetro/contBin/reg1/ffd_gen[21].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X5Y92      inst_voltimetro/contBin/reg1/ffd_gen[9].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X4Y87      inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[0].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X4Y87      inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[1].ffdx/Q_o_reg/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X4Y87      inst_voltimetro/contUnos/cOnes_gen[1].BCD_counterN/reg0/ffd_gen[2].ffdx/Q_o_reg/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X6Y87      inst_voltimetro/ADC/ffd0/Q_o_reg/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[0].ffdx/Q_o_reg/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[1].ffdx/Q_o_reg/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[1].ffdx/Q_o_reg/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X1Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[2].ffdx/Q_o_reg/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[3].ffdx/Q_o_reg/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         20.000      19.500     SLICE_X0Y93      inst_voltimetro/Monitor4K/contH/reg1/ffd_gen[4].ffdx/Q_o_reg/C
 
 
 

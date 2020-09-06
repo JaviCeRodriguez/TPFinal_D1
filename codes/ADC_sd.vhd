@@ -1,24 +1,24 @@
 -- ADC Sigma Delta
--- Utilizo: ffd.vhd
+
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity ADC_sd is
   port(
-    clk_i: in std_logic; -- Clock master
-    rst_i: in std_logic; -- Reset master
-    ena_i: in std_logic; -- Enable master
-    D_vi: in std_logic; -- Pin D6 de FPGA
-    Q_fb: out std_logic; -- Pin D5 de FPGA
-    Q_proc: out std_logic -- Para bloque de procesamiento
+    clk_i: in std_logic;  -- Clock
+    rst_i: in std_logic;  -- Reset
+    ena_i: in std_logic;  -- Enable
+    D_vi: in std_logic;   -- Señal de entrada
+    Q_fb: out std_logic;  -- Realimentacion
+    Q_proc: out std_logic -- Bloque de procesamiento
   );
 end;
 
 architecture ADC_sd_arq of ADC_sd is
-----------------------------------------------
---              Componentes                 --
-----------------------------------------------
 component ffd -- Invoco codigo de Flip Flop D
   port(
     clk_i: in std_logic; -- Clock
@@ -29,14 +29,8 @@ component ffd -- Invoco codigo de Flip Flop D
   );
 end component;
 
-----------------------------------------------
---                Seniales                  --
-----------------------------------------------
 signal Q_aux: std_logic; -- Cable auxiliar para Q de ffd
 
-----------------------------------------------
---              Arquitectura                --
-----------------------------------------------
 begin
   ffd0: ffd
     port map(

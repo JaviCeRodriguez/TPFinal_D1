@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Mon Aug 24 19:55:47 2020
+| Date             : Sat Sep  5 11:44:29 2020
 | Host             : DESKTOP-ARKS4GD running 64-bit major release  (build 9200)
 | Command          : report_power -file Voltimetro_toplevel_power_routed.rpt -pb Voltimetro_toplevel_power_summary_routed.pb -rpx Voltimetro_toplevel_power_routed.rpx
 | Design           : Voltimetro_toplevel
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      217 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       96 |     20800 |            0.46 |
-|   Register     |    <0.001 |       71 |     41600 |            0.17 |
+| Slice Logic    |    <0.001 |      264 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      116 |     20800 |            0.56 |
+|   Register     |    <0.001 |       85 |     41600 |            0.20 |
 |   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
-|   Others       |     0.000 |       31 |       --- |             --- |
-| Signals        |    <0.001 |      128 |       --- |             --- |
+|   Others       |     0.000 |       37 |       --- |             --- |
+| Signals        |    <0.001 |      156 |       --- |             --- |
 | MMCM           |     0.116 |        1 |         5 |           20.00 |
 | I/O            |    <0.001 |        9 |       210 |            4.29 |
 | Static Power   |     0.062 |          |           |                 |
@@ -186,7 +186,13 @@ Table of Contents
 |         ffd_gen[13].ffdx        |    <0.001 |
 |         ffd_gen[14].ffdx        |    <0.001 |
 |         ffd_gen[15].ffdx        |    <0.001 |
+|         ffd_gen[16].ffdx        |    <0.001 |
+|         ffd_gen[17].ffdx        |    <0.001 |
+|         ffd_gen[18].ffdx        |    <0.001 |
+|         ffd_gen[19].ffdx        |    <0.001 |
 |         ffd_gen[1].ffdx         |    <0.001 |
+|         ffd_gen[20].ffdx        |    <0.001 |
+|         ffd_gen[21].ffdx        |    <0.001 |
 |         ffd_gen[2].ffdx         |    <0.001 |
 |         ffd_gen[3].ffdx         |    <0.001 |
 |         ffd_gen[4].ffdx         |    <0.001 |
@@ -226,17 +232,29 @@ Table of Contents
 |           ffd_gen[1].ffdx       |    <0.001 |
 |           ffd_gen[2].ffdx       |    <0.001 |
 |           ffd_gen[3].ffdx       |    <0.001 |
-|     reg_gen[2].regNx            |    <0.001 |
-|       ffd_gen[0].ffdx           |    <0.001 |
-|       ffd_gen[1].ffdx           |    <0.001 |
-|       ffd_gen[2].ffdx           |    <0.001 |
-|       ffd_gen[3].ffdx           |    <0.001 |
+|       cOnes_gen[5].BCD_counterN |    <0.001 |
+|         reg0                    |    <0.001 |
+|           ffd_gen[0].ffdx       |    <0.001 |
+|           ffd_gen[1].ffdx       |    <0.001 |
+|           ffd_gen[2].ffdx       |    <0.001 |
+|           ffd_gen[3].ffdx       |    <0.001 |
+|       cOnes_gen[6].BCD_counterN |    <0.001 |
+|         reg0                    |    <0.001 |
+|           ffd_gen[0].ffdx       |    <0.001 |
+|           ffd_gen[1].ffdx       |    <0.001 |
+|           ffd_gen[2].ffdx       |    <0.001 |
+|           ffd_gen[3].ffdx       |    <0.001 |
 |     reg_gen[3].regNx            |    <0.001 |
 |       ffd_gen[0].ffdx           |    <0.001 |
 |       ffd_gen[1].ffdx           |    <0.001 |
 |       ffd_gen[2].ffdx           |    <0.001 |
 |       ffd_gen[3].ffdx           |    <0.001 |
-|     reg_gen[4].regNx            |    <0.001 |
+|     reg_gen[5].regNx            |    <0.001 |
+|       ffd_gen[0].ffdx           |    <0.001 |
+|       ffd_gen[1].ffdx           |    <0.001 |
+|       ffd_gen[2].ffdx           |    <0.001 |
+|       ffd_gen[3].ffdx           |    <0.001 |
+|     reg_gen[6].regNx            |    <0.001 |
 |       ffd_gen[0].ffdx           |    <0.001 |
 |       ffd_gen[1].ffdx           |    <0.001 |
 |       ffd_gen[2].ffdx           |    <0.001 |

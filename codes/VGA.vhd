@@ -1,5 +1,8 @@
 -- Generadora de sincronismo (VGA)
--- Utilizo: ffd.vhd, cHor.vhd, cVer.vhd
+
+-- Alumno: Javier Ceferino Rodriguez
+-- Mail: jcrodriguez@estudiantes.unsam.edu.ar
+-- Periodo: 1° Cuatrimestre 2020
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -33,7 +36,7 @@ signal rstH_aux, rstV_aux: std_logic; -- Salidas de OR para reset de ffd
 signal compEnaH, compRstH: std_logic; -- Salidas de comparadores para horizontal
 signal compEnaV, compRstV: std_logic; -- Salidas de comparadores para vertical
 signal vidH, vidV: std_logic; -- Vidon de horizontal y vertical
-signal vidon: std_logic; -- Vidon auxiliar
+signal vidon_aux: std_logic; -- Vidon auxiliar
 
 begin
   -- HORIZONTAL
@@ -60,25 +63,25 @@ begin
       D_i   =>  '1', -- D siempre en 1
       Q_o   =>  hsync -- Sincronismo horizontal
     );
-  -- Comparadores de pulsos asc y desc de hsync (harcodeados)
+  -- Comparadores de pulsos asc y desc de hsync
     compNb0: entity work.comp_Nb
     generic map(N => N)
     port map(
-        a => cHori,
-        b => "1010010000", -- Comparo con 656
-        s => compEnaH
+      a => cHori,
+      b => "1010010000", -- Comparo con 656
+      s => compEnaH
     );
     compNb1: entity work.comp_Nb
       generic map(N => N)
       port map(
-          a => cHori,
-          b => "1011101111", -- Comparo con 752-1
-          s => compRstH
+        a => cHori,
+        b => "1011101111", -- Comparo con 752-1
+        s => compRstH
       );
 
   -- VERTICAL
-  -- Pulso ascendente: 490 lineas (1 1110 1010)
-  -- Pulso descendente: 492 lineas (1 1110 1100)
+  -- Pulso ascendente: 490 lineas
+  -- Pulso descendente: 492 lineas
     pixel_y <= cVert;
     rstV_aux <= rst_i or compRstV;
   -- Contador (Hasta 522)
@@ -100,37 +103,32 @@ begin
         D_i   =>  '1', -- D siempre en 1
         Q_o   =>  vsync -- Sincronismo vertical
       );
-  -- Comparadores de pulsos asc y desc de vsync (harcodeados)
+  -- Comparadores de pulsos asc y desc de vsync
     compNb2: entity work.comp_Nb
         generic map(N => N)
         port map(
-            a => cVert,
-            b => "0111101010", -- Comparo con 490
-            s => compEnaV
+          a => cVert,
+          b => "0111101010", -- Comparo con 490
+          s => compEnaV
         );
     compNb3: entity work.comp_Nb
         generic map(N => N)
         port map(
-            a => cVert,
-            b => "0111101011", -- Comparo con 492-1
-            s => compRstV
+          a => cVert,
+          b => "0111101011", -- Comparo con 492-1
+          s => compRstV
         );
 
   -- VIDON
-  vidon <= vidH and vidV; -- Si vidH y vidV son '1', activo vidon
-  -- Vidon Horizontal
+  vidon_aux <= vidH and vidV; -- Si vidH y vidV son '1', activo vidon
+  -- Vidon Horizontal: Se muestra en pantalla si los bits son: 000, 001, 010, 011 y 100
   vidH <= not cHori(9) or (not cHori(8) and not cHori(7));
---  vidH <= cHori(9) and (not cHori(8)) and
---          cHori(7) and (not cHori(6)) and (not cHori(5)) and (not cHori(4)) and
---          (not cHori(3)) and (not cHori(2)) and (not cHori(1)) and (not cHori(0));
-  -- Vidon Vertical
+  -- Vidon Vertical: Se muestra en pantalla si los bits son: x01 (x = no importa)
   vidV <= not cVert(8) and cVert(7);
---  vidV <= (not cVert(9)) and cVert(8) and
---          cVert(7) and cVert(6) and cVert(5) and (not cVert(4)) and
---          (not cHori(3)) and (not cHori(2)) and (not cHori(1)) and (not cHori(0));
 
   -- RGB OUT
-  red_o <= red_i and vidon;
-  blu_o <= blu_i and vidon;
-  grn_o <= grn_i and vidon;
+  -- Cada color va a estar controlado por el vidon
+  red_o <= red_i and vidon_aux;
+  blu_o <= blu_i and vidon_aux;
+  grn_o <= grn_i and vidon_aux;
 end;
