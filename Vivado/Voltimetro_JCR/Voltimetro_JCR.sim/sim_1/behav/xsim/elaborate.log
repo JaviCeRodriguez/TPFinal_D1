@@ -1,0 +1,45 @@
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 79316bebb50640a6b5301e4c6698935b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot VoltimetroTL_tb_behav xil_defaultlib.VoltimetroTL_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.utils
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=9.125...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_generator_clk_wiz
+Compiling module xil_defaultlib.clk_generator
+Compiling architecture ffd_arq of entity xil_defaultlib.ffd [ffd_default]
+Compiling architecture adc_sd_arq of entity xil_defaultlib.ADC_sd [adc_sd_default]
+Compiling architecture reg_nb_arq of entity xil_defaultlib.reg_Nb [reg_nb_default]
+Compiling architecture sumb_1b_arq of entity xil_defaultlib.sum_1b [sum_1b_default]
+Compiling architecture sum_nb_arq of entity xil_defaultlib.sum_Nb [sum_nb_default]
+Compiling architecture comp_nb_arq of entity xil_defaultlib.comp_Nb [\comp_Nb(n=4)\]
+Compiling architecture bcd_counter_arq of entity xil_defaultlib.BCD_counter [bcd_counter_default]
+Compiling architecture cones_arq of entity xil_defaultlib.cOnes [cones_default]
+Compiling architecture reg_nb_arq of entity xil_defaultlib.reg_Nb [\reg_Nb(n=16)\]
+Compiling architecture sum_nb_arq of entity xil_defaultlib.sum_Nb [\sum_Nb(n=16)\]
+Compiling architecture comp_nb_arq of entity xil_defaultlib.comp_Nb [\comp_Nb(n=16)\]
+Compiling architecture c33k_arq of entity xil_defaultlib.c33k [c33k_default]
+Compiling architecture mux_arq of entity xil_defaultlib.mux [mux_default]
+Compiling architecture rom_arq of entity xil_defaultlib.ROM [rom_default]
+Compiling architecture reg_nb_arq of entity xil_defaultlib.reg_Nb [\reg_Nb(n=10)\]
+Compiling architecture sum_nb_arq of entity xil_defaultlib.sum_Nb [\sum_Nb(n=10)\]
+Compiling architecture comp_nb_arq of entity xil_defaultlib.comp_Nb [comp_nb_default]
+Compiling architecture chor_arq of entity xil_defaultlib.cHor [chor_default]
+Compiling architecture cver_arq of entity xil_defaultlib.cVer [cver_default]
+Compiling architecture vga_arq of entity xil_defaultlib.VGA [vga_default]
+Compiling architecture voltimetro_arq of entity xil_defaultlib.Voltimetro [voltimetro_default]
+Compiling architecture voltimetro_toplevel_arq of entity xil_defaultlib.Voltimetro_toplevel [voltimetro_toplevel_default]
+Compiling architecture voltimetrotl_tb_arq of entity xil_defaultlib.voltimetrotl_tb
+Built simulation snapshot VoltimetroTL_tb_behav

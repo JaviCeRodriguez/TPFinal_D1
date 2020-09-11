@@ -1,0 +1,534 @@
+
+*** Running vivado
+    with args -log Voltimetro_toplevel.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Voltimetro_toplevel.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Voltimetro_toplevel.tcl -notrace
+Command: synth_design -top Voltimetro_toplevel -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11864 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 405.164 ; gain = 98.285
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Voltimetro_toplevel' [Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd:62]
+INFO: [Synth 8-3491] module 'clk_generator' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.runs/synth_1/.Xil/Vivado-13136-DESKTOP-ARKS4GD/realtime/clk_generator_stub.vhdl:5' bound to instance 'clk25MHz_gen' of component 'clk_generator' [Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'clk_generator' [Z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.runs/synth_1/.Xil/Vivado-13136-DESKTOP-ARKS4GD/realtime/clk_generator_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'Voltimetro' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd:12' bound to instance 'inst_voltimetro' of component 'Voltimetro' [Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'Voltimetro' [Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd:29]
+INFO: [Synth 8-638] synthesizing module 'ADC_sd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd:21]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffd0' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'ffd' (1#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'ADC_sd' (2#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/ADC_sd.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'cOnes' [Z:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd:24]
+	Parameter N bound to: 7 - type: integer 
+	Parameter M bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'BCD_counter' [Z:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd:23]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'reg_Nb' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:23]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'reg_Nb' (3#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'sum_Nb' [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd:23]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'sum_1b' [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'sum_1b' (4#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_1b.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'sum_Nb' (5#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'comp_Nb' [Z:/Facultad/Digital_1/TPFinal_D1/codes/comp_Nb.vhd:19]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'comp_Nb' (6#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/comp_Nb.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'BCD_counter' (7#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/BCD_counter.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'cOnes' (8#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/cOnes.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'c33k' [Z:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd:23]
+	Parameter N bound to: 22 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'reg_Nb__parameterized0' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:23]
+	Parameter N bound to: 22 - type: integer 
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'reg_Nb__parameterized0' (8#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'sum_Nb__parameterized0' [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd:23]
+	Parameter N bound to: 22 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sum_Nb__parameterized0' (8#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'comp_Nb__parameterized0' [Z:/Facultad/Digital_1/TPFinal_D1/codes/comp_Nb.vhd:19]
+	Parameter N bound to: 22 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'comp_Nb__parameterized0' (8#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/comp_Nb.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'c33k' (9#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/c33k.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'mux' [Z:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'mux' (10#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/mux.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'ROM' [Z:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'ROM' (11#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/ROM.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'VGA' [Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd:31]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cHor' [Z:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd:23]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'reg_Nb__parameterized1' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:23]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-3491] module 'ffd' declared at 'Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:10' bound to instance 'ffdx' of component 'ffd' [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'reg_Nb__parameterized1' (11#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/reg_Nb.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'sum_Nb__parameterized1' [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd:23]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sum_Nb__parameterized1' (11#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/sum_Nb.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'comp_Nb__parameterized1' [Z:/Facultad/Digital_1/TPFinal_D1/codes/comp_Nb.vhd:19]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'comp_Nb__parameterized1' (11#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/comp_Nb.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'cHor' (12#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/cHor.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'cVer' [Z:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd:23]
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'cVer' (13#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/cVer.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'VGA' (14#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'Voltimetro' (15#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'Voltimetro_toplevel' (16#1) [Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro_Esquema_Arty_A7-35_top_level.vhd:62]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 460.695 ; gain = 153.816
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 460.695 ; gain = 153.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 460.695 ; gain = 153.816
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.srcs/sources_1/ip/clk_generator/clk_generator/clk_generator_in_context.xdc] for cell 'clk25MHz_gen'
+Finished Parsing XDC File [z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.srcs/sources_1/ip/clk_generator/clk_generator/clk_generator_in_context.xdc] for cell 'clk25MHz_gen'
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.520 . Memory (MB): peak = 790.602 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:00:53 . Memory (MB): peak = 790.602 ; gain = 483.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:00:53 . Memory (MB): peak = 790.602 ; gain = 483.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_i. (constraint file  z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.srcs/sources_1/ip/clk_generator/clk_generator/clk_generator_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_i. (constraint file  z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.srcs/sources_1/ip/clk_generator/clk_generator/clk_generator_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for clk25MHz_gen. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:53 . Memory (MB): peak = 790.602 ; gain = 483.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 790.602 ; gain = 483.723
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 70    
+	   2 Input      1 Bit         XORs := 132   
++---Registers : 
+	                1 Bit    Registers := 101   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ffd 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module sum_1b 
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 1     
+Module comp_Nb 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 4     
+Module comp_Nb__parameterized0 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 22    
+Module comp_Nb__parameterized1 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 10    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[0].regNx/ffd_gen[0].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[0].regNx/ffd_gen[1].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[0].regNx/ffd_gen[2].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[0].regNx/ffd_gen[3].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[1].regNx/ffd_gen[0].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[1].regNx/ffd_gen[1].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[1].regNx/ffd_gen[2].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[1].regNx/ffd_gen[3].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[2].regNx/ffd_gen[0].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[2].regNx/ffd_gen[1].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[2].regNx/ffd_gen[2].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[2].regNx/ffd_gen[3].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[4].regNx/ffd_gen[0].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[4].regNx/ffd_gen[1].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[4].regNx/ffd_gen[2].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+WARNING: [Synth 8-6014] Unused sequential element inst_voltimetro/reg_gen[4].regNx/ffd_gen[3].ffdx/Q_o_reg was removed.  [Z:/Facultad/Digital_1/TPFinal_D1/codes/ffd.vhd:26]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:57 . Memory (MB): peak = 790.602 ; gain = 483.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++--------------------+------------------------------------+---------------+----------------+
+|Module Name         | RTL Object                         | Depth x Width | Implemented As | 
++--------------------+------------------------------------+---------------+----------------+
+|ROM                 | pixChar[0]                         | 128x7         | LUT            | 
+|Voltimetro_toplevel | inst_voltimetro/ROMcito/pixChar[0] | 128x7         | LUT            | 
++--------------------+------------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk25MHz_gen/clk_o' to pin 'clk25MHz_gen/bbstub_clk_o/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:04 ; elapsed = 00:01:23 . Memory (MB): peak = 790.602 ; gain = 483.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:25 . Memory (MB): peak = 805.070 ; gain = 498.191
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:25 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:08 ; elapsed = 00:01:28 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_generator |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------------------+------+
+|      |Cell                 |Count |
++------+---------------------+------+
+|1     |clk_generator_bbox_0 |     1|
+|2     |LUT1                 |    11|
+|3     |LUT2                 |    16|
+|4     |LUT3                 |    14|
+|5     |LUT4                 |    20|
+|6     |LUT5                 |    22|
+|7     |LUT6                 |    57|
+|8     |MUXF7                |     2|
+|9     |FDRE                 |    85|
+|10    |IBUF                 |     2|
+|11    |OBUF                 |     6|
++------+---------------------+------+
+
+Report Instance Areas: 
++------+----------------------------------+--------------------------+------+
+|      |Instance                          |Module                    |Cells |
++------+----------------------------------+--------------------------+------+
+|1     |top                               |                          |   236|
+|2     |  inst_voltimetro                 |Voltimetro                |   227|
+|3     |    ADC                           |ADC_sd                    |     2|
+|4     |      ffd0                        |ffd_99                    |     2|
+|5     |    Monitor4K                     |VGA                       |    76|
+|6     |      contH                       |cHor                      |    35|
+|7     |        reg1                      |reg_Nb__parameterized1_88 |    35|
+|8     |          \ffd_gen[0].ffdx        |ffd_89                    |     3|
+|9     |          \ffd_gen[1].ffdx        |ffd_90                    |     2|
+|10    |          \ffd_gen[2].ffdx        |ffd_91                    |     4|
+|11    |          \ffd_gen[3].ffdx        |ffd_92                    |     3|
+|12    |          \ffd_gen[4].ffdx        |ffd_93                    |     2|
+|13    |          \ffd_gen[5].ffdx        |ffd_94                    |     2|
+|14    |          \ffd_gen[6].ffdx        |ffd_95                    |     6|
+|15    |          \ffd_gen[7].ffdx        |ffd_96                    |     3|
+|16    |          \ffd_gen[8].ffdx        |ffd_97                    |     6|
+|17    |          \ffd_gen[9].ffdx        |ffd_98                    |     4|
+|18    |      contV                       |cVer                      |    39|
+|19    |        reg1                      |reg_Nb__parameterized1    |    39|
+|20    |          \ffd_gen[0].ffdx        |ffd_78                    |     4|
+|21    |          \ffd_gen[1].ffdx        |ffd_79                    |     2|
+|22    |          \ffd_gen[2].ffdx        |ffd_80                    |     2|
+|23    |          \ffd_gen[3].ffdx        |ffd_81                    |     2|
+|24    |          \ffd_gen[4].ffdx        |ffd_82                    |    14|
+|25    |          \ffd_gen[5].ffdx        |ffd_83                    |     7|
+|26    |          \ffd_gen[6].ffdx        |ffd_84                    |     3|
+|27    |          \ffd_gen[7].ffdx        |ffd_85                    |     3|
+|28    |          \ffd_gen[8].ffdx        |ffd_86                    |     1|
+|29    |          \ffd_gen[9].ffdx        |ffd_87                    |     1|
+|30    |      ffdH                        |ffd_76                    |     1|
+|31    |      ffdV                        |ffd_77                    |     1|
+|32    |    ROMcito                       |ROM                       |     2|
+|33    |    contBin                       |c33k                      |    60|
+|34    |      reg1                        |reg_Nb__parameterized0    |    60|
+|35    |        \ffd_gen[0].ffdx          |ffd_54                    |     3|
+|36    |        \ffd_gen[10].ffdx         |ffd_55                    |     3|
+|37    |        \ffd_gen[11].ffdx         |ffd_56                    |     7|
+|38    |        \ffd_gen[12].ffdx         |ffd_57                    |     3|
+|39    |        \ffd_gen[13].ffdx         |ffd_58                    |     2|
+|40    |        \ffd_gen[14].ffdx         |ffd_59                    |     1|
+|41    |        \ffd_gen[15].ffdx         |ffd_60                    |     2|
+|42    |        \ffd_gen[16].ffdx         |ffd_61                    |     2|
+|43    |        \ffd_gen[17].ffdx         |ffd_62                    |     3|
+|44    |        \ffd_gen[18].ffdx         |ffd_63                    |     3|
+|45    |        \ffd_gen[19].ffdx         |ffd_64                    |     3|
+|46    |        \ffd_gen[1].ffdx          |ffd_65                    |     2|
+|47    |        \ffd_gen[20].ffdx         |ffd_66                    |     1|
+|48    |        \ffd_gen[21].ffdx         |ffd_67                    |     1|
+|49    |        \ffd_gen[2].ffdx          |ffd_68                    |     2|
+|50    |        \ffd_gen[3].ffdx          |ffd_69                    |     4|
+|51    |        \ffd_gen[4].ffdx          |ffd_70                    |     3|
+|52    |        \ffd_gen[5].ffdx          |ffd_71                    |     5|
+|53    |        \ffd_gen[6].ffdx          |ffd_72                    |     1|
+|54    |        \ffd_gen[7].ffdx          |ffd_73                    |     3|
+|55    |        \ffd_gen[8].ffdx          |ffd_74                    |     2|
+|56    |        \ffd_gen[9].ffdx          |ffd_75                    |     4|
+|57    |    contUnos                      |cOnes                     |    75|
+|58    |      \cOnes_gen[0].BCD_counterN  |BCD_counter               |    10|
+|59    |        reg0                      |reg_Nb_49                 |    10|
+|60    |          \ffd_gen[0].ffdx        |ffd_50                    |     3|
+|61    |          \ffd_gen[1].ffdx        |ffd_51                    |     3|
+|62    |          \ffd_gen[2].ffdx        |ffd_52                    |     3|
+|63    |          \ffd_gen[3].ffdx        |ffd_53                    |     1|
+|64    |      \cOnes_gen[1].BCD_counterN  |BCD_counter_13            |    11|
+|65    |        reg0                      |reg_Nb_44                 |    11|
+|66    |          \ffd_gen[0].ffdx        |ffd_45                    |     3|
+|67    |          \ffd_gen[1].ffdx        |ffd_46                    |     3|
+|68    |          \ffd_gen[2].ffdx        |ffd_47                    |     4|
+|69    |          \ffd_gen[3].ffdx        |ffd_48                    |     1|
+|70    |      \cOnes_gen[2].BCD_counterN  |BCD_counter_14            |    11|
+|71    |        reg0                      |reg_Nb_39                 |    11|
+|72    |          \ffd_gen[0].ffdx        |ffd_40                    |     3|
+|73    |          \ffd_gen[1].ffdx        |ffd_41                    |     3|
+|74    |          \ffd_gen[2].ffdx        |ffd_42                    |     4|
+|75    |          \ffd_gen[3].ffdx        |ffd_43                    |     1|
+|76    |      \cOnes_gen[3].BCD_counterN  |BCD_counter_15            |    12|
+|77    |        reg0                      |reg_Nb_34                 |    12|
+|78    |          \ffd_gen[0].ffdx        |ffd_35                    |     4|
+|79    |          \ffd_gen[1].ffdx        |ffd_36                    |     3|
+|80    |          \ffd_gen[2].ffdx        |ffd_37                    |     4|
+|81    |          \ffd_gen[3].ffdx        |ffd_38                    |     1|
+|82    |      \cOnes_gen[4].BCD_counterN  |BCD_counter_16            |    11|
+|83    |        reg0                      |reg_Nb_29                 |    11|
+|84    |          \ffd_gen[0].ffdx        |ffd_30                    |     2|
+|85    |          \ffd_gen[1].ffdx        |ffd_31                    |     3|
+|86    |          \ffd_gen[2].ffdx        |ffd_32                    |     5|
+|87    |          \ffd_gen[3].ffdx        |ffd_33                    |     1|
+|88    |      \cOnes_gen[5].BCD_counterN  |BCD_counter_17            |    11|
+|89    |        reg0                      |reg_Nb_24                 |    11|
+|90    |          \ffd_gen[0].ffdx        |ffd_25                    |     3|
+|91    |          \ffd_gen[1].ffdx        |ffd_26                    |     3|
+|92    |          \ffd_gen[2].ffdx        |ffd_27                    |     3|
+|93    |          \ffd_gen[3].ffdx        |ffd_28                    |     2|
+|94    |      \cOnes_gen[6].BCD_counterN  |BCD_counter_18            |     9|
+|95    |        reg0                      |reg_Nb_19                 |     9|
+|96    |          \ffd_gen[0].ffdx        |ffd_20                    |     3|
+|97    |          \ffd_gen[1].ffdx        |ffd_21                    |     2|
+|98    |          \ffd_gen[2].ffdx        |ffd_22                    |     2|
+|99    |          \ffd_gen[3].ffdx        |ffd_23                    |     2|
+|100   |    \reg_gen[3].regNx             |reg_Nb                    |     4|
+|101   |      \ffd_gen[0].ffdx            |ffd_9                     |     1|
+|102   |      \ffd_gen[1].ffdx            |ffd_10                    |     1|
+|103   |      \ffd_gen[2].ffdx            |ffd_11                    |     1|
+|104   |      \ffd_gen[3].ffdx            |ffd_12                    |     1|
+|105   |    \reg_gen[5].regNx             |reg_Nb_0                  |     4|
+|106   |      \ffd_gen[0].ffdx            |ffd_5                     |     1|
+|107   |      \ffd_gen[1].ffdx            |ffd_6                     |     1|
+|108   |      \ffd_gen[2].ffdx            |ffd_7                     |     1|
+|109   |      \ffd_gen[3].ffdx            |ffd_8                     |     1|
+|110   |    \reg_gen[6].regNx             |reg_Nb_1                  |     4|
+|111   |      \ffd_gen[0].ffdx            |ffd                       |     1|
+|112   |      \ffd_gen[1].ffdx            |ffd_2                     |     1|
+|113   |      \ffd_gen[2].ffdx            |ffd_3                     |     1|
+|114   |      \ffd_gen[3].ffdx            |ffd_4                     |     1|
++------+----------------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:08 ; elapsed = 00:01:29 . Memory (MB): peak = 806.242 ; gain = 499.363
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:01:10 . Memory (MB): peak = 806.242 ; gain = 169.457
+Synthesis Optimization Complete : Time (s): cpu = 00:01:08 ; elapsed = 00:01:30 . Memory (MB): peak = 806.242 ; gain = 499.363
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+97 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:11 ; elapsed = 00:01:37 . Memory (MB): peak = 806.242 ; gain = 510.840
+INFO: [Common 17-1381] The checkpoint 'Z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.runs/synth_1/Voltimetro_toplevel.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Voltimetro_toplevel_utilization_synth.rpt -pb Voltimetro_toplevel_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.161 . Memory (MB): peak = 806.242 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Sep  5 11:40:35 2020...

@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "Z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.srcs/sources_1/ip/clk_generator/clk_generator_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_generator_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "Z:/Facultad/Digital_1/TPFinal_D1/Voltimetro_JCR/Voltimetro_JCR.srcs/sources_1/ip/clk_generator/clk_generator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_generator
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Facultad/Digital_1/TPFinal_D1/codes/VGA.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity VGA
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Facultad/Digital_1/TPFinal_D1/codes/Voltimetro.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Voltimetro
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/Facultad/Digital_1/TPFinal_D1/codes/VoltimetroTL_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity VoltimetroTL_tb

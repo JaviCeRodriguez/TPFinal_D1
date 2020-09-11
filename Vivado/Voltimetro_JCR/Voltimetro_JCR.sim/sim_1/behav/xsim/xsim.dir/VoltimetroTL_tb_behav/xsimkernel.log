@@ -1,0 +1,7 @@
+Running: xsim.dir/VoltimetroTL_tb_behav/xsimk.exe -simmode gui -wdb VoltimetroTL_tb_behav.wdb -simrunnum 0 -socket 50085
+Design successfully loaded
+Design Loading Memory Usage: 6244 KB (Peak: 6244 KB)
+Design Loading CPU Usage: 62 ms
+Simulation completed
+Simulation Memory Usage: 15564 KB (Peak: 15564 KB)
+Simulation CPU Usage: 163421 ms
