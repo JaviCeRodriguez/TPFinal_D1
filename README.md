@@ -3,7 +3,6 @@ _El siguiente proyecto trata de un voltímetro digital para realizar lecturas de
 la implementación de una salida VGA para poder visualizar la lectura de tensión en un monitor._
 
 ## Requisitos 📋
-
 _Necesarios para llevar a cabo el proyecto_
 ```
 **Hardware**
@@ -16,3 +15,8 @@ Varios cables DUPONT
 **Software**
 Vivado 2018.1
 ```
+
+## Informe
+Para más información sobre el proyecto, en la carpeta [PFinal_D1/Informe](https://github.com/JaviCeRodriguez/TPFinal_D1/tree/mainbranch/Informe) se encuentran el informe
+en formato Word y PDF. Encontrará información detallada sobre simulación, circuitos, bloques, jerarquías, etc.
+Cualquier duda, me puede contactar via mail: javicerodriguez@gmail.com
