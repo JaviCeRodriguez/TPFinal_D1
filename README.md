@@ -4,7 +4,7 @@ la implementación de una salida VGA para poder visualizar la lectura de tensió
 
 ## Requisitos 📋
 
-_Necesarii para llevar a cabo el proyecto_
+_Necesarios para llevar a cabo el proyecto_
 ```
 **Hardware**
 1 Placa FPGA Arty A7-35 (puede ser otra, pero hay que cambiar el pinout en el código)
